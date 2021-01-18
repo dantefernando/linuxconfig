@@ -118,4 +118,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+# Custom Commands by Dante
+set -o vi
