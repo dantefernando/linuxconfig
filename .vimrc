@@ -1,5 +1,6 @@
 set clipboard=unnamed
 set relativenumber
+set number
 :set tabstop=4
 au BufNewFile, Bufread *.py
 	\ set tabstop=4
@@ -9,3 +10,4 @@ au BufNewFile, Bufread *.py
 	\ set expandtab
 	\ set autoindent
 	\ set fileformat=unix
+
