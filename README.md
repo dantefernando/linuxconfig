@@ -1,2 +1,2 @@
-# dotfiles
+# LinuxConfig
 Dot files for linux
