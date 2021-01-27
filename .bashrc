@@ -8,7 +8,6 @@ case $- in
       *) return;;
 esac
 
-alias winhome='cd /mnt/c/'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -118,5 +117,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Custom Commands by Dante
-set -o vi
+# === Custom Bash Commands added by Dante === #
+# ===================================== #
+
+# Sets to terminal to vim mode
+set -o vi  
+
+# Sets allows for copy and pasting command outputs  
+alias pbcopy="clip.exe"  
+alias pbpaste="powershell.exe -command 'Get-Clipboard' | head -n -1"
+
+# Aliases for directories
+alias winhome="cd /mnt/c/"
+alias 1drive="cd /mnt/c/Users/Fernpe2/Documents/OneDrive\ -\ The\ British\ School\ in\ The\ Netherlands/Year\ 10/Computing/"
+alias winterm='vim /mnt/c/Users/Fernpe2/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json'

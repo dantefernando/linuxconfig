@@ -11,3 +11,5 @@ au BufNewFile, Bufread *.py
 	\ set autoindent
 	\ set fileformat=unix
 
+source $VIMRUNTIME/mswin.vim
+behave mswin
