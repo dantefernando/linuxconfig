@@ -76,8 +76,6 @@ au BufNewFile, Bufread *.py
 	\ set autoindent
 	\ set fileformat=unix
 
-source $VIMRUNTIME/mswin.vim
-behave mswin
 
 colo slate
 
@@ -111,8 +109,6 @@ au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html
     \ set autoindent |
     \ set fileformat=unix |
 
-source $VIMRUNTIME/mswin.vim
-behave mswin
 
 " up to here del"
 set encoding=utf-8
