@@ -91,6 +91,11 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
  \ '\=eval(submatch(0)-1)',
  \ '')<CR>
 
+nnoremap <Esc> :noh
+
+
+
+
 set dir=~/tmp
 set noundofile
 set guifont=:h15
