@@ -1,4 +1,3 @@
-
 call plug#begin('~/.vim/plugged')
 Plug 'ap/vim-css-color'
 
@@ -12,7 +11,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'ervandew/supertab'
 
 call plug#end()
@@ -76,6 +75,8 @@ au BufNewFile, Bufread *.py
 	\ set autoindent
 	\ set fileformat=unix
 
+source $VIMRUNTIME/mswin.vim
+behave mswin
 
 colo slate
 
@@ -109,6 +110,8 @@ au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html
     \ set autoindent |
     \ set fileformat=unix |
 
+source $VIMRUNTIME/mswin.vim
+behave mswin
 
 " up to here del"
 set encoding=utf-8
