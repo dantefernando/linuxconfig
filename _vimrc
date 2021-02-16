@@ -130,3 +130,6 @@ set hlsearch "highlights matching searches
 set showmatch "highlights matching brackets
 set wildmenu "graphical auto complete menu
 set noswapfile
+
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
