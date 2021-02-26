@@ -92,6 +92,9 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
  \ '')<CR>
 
 nnoremap <F8> :noh <esc>
+nnoremap <F10> :tabnew <esc>
+nnoremap <F12> :tabn <esc>
+nnoremap <F11> :tabp <esc>
 
 set dir=~/tmp
 set noundofile
