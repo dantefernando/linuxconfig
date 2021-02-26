@@ -91,7 +91,7 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
  \ '\=eval(submatch(0)-1)',
  \ '')<CR>
 
-nnoremap <Esc> :noh
+nnoremap <F8> :noh
 
 
 
