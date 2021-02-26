@@ -91,15 +91,11 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
  \ '\=eval(submatch(0)-1)',
  \ '')<CR>
 
-nnoremap <F8> :noh
-
-
-
+nnoremap <F8> :noh <esc>
 
 set dir=~/tmp
 set noundofile
 set guifont=:h15
-
 
 set clipboard=unnamed
 set relativenumber
