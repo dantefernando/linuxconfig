@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'ervandew/supertab'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
@@ -93,12 +94,13 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
 
 nnoremap <F8> :noh <esc>
 nnoremap <F10> :tabnew <esc>
-nnoremap <F12> :tabn <esc>
+nnoremap <C-TAB> :tabn <esc>
 nnoremap <F11> :tabp <esc>
 
 set dir=~/tmp
 set noundofile
 set guifont=:h15
+
 
 set clipboard=unnamed
 set relativenumber
@@ -132,3 +134,14 @@ set noswapfile
 
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
+
+" Start on vim Startup
+let g:indent_guides_enable_on_vim_startup = 0
+
+" The size of the indent line
+let g:indent_guides_guide_size = 4
+
+" When it starts
+let g:indent_guides_start_level = 1
+
+
