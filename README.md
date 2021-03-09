@@ -12,3 +12,4 @@ Dot files for Vim and Bash
 - `F10` creates a new tab in Vim
 - `F9` runs python program inside Vim interface
 - `F8` clears highlighting for searches using `:noh` command in Vim
+- `F7` Toggles Indent Guide Lines
