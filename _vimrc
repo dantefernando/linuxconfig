@@ -93,6 +93,7 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
  \ '')<CR>
 
 nnoremap <F8> :noh <esc>
+nnoremap <F7> :IndentGuidesToggle <esc>
 nnoremap <F10> :tabnew <esc>
 nnoremap <C-TAB> :tabn <esc>
 nnoremap <F11> :tabp <esc>
