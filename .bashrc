@@ -20,7 +20,7 @@ fi
 # === Custom Bash Commands added by Dante === #
 # ===================================== #
 
-# Sets to terminal to vim mode
+# Sets to terminal to vi mode
 set -o vi  
 
 # some ls aliases
@@ -34,6 +34,12 @@ alias sckdwm='cd ~/suckless/dwm'
 alias sckst='cd ~/suckless/st'
 alias sckdmenu='cd ~/suckless/dmenu'
 alias sckdwmb='cd ~/suckless/dwmblocks'
+
+# cd's to hdd
+alias hdd='cd /mnt/hdd'
+
+# edits the config files with root permissions for suckless utils
+alias con='sudo nvim config.h'
 
 # Volume mixer for pulseaudio
 alias vol='pulsemixer'

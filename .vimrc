@@ -1,7 +1,27 @@
-set clipboard=unnamed
+
+call plug#begin('~/.vim/plugged')
+Plug 'ap/vim-css-color'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'tpope/vim-commentary'
+Plug 'ervandew/supertab'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'thinca/vim-fontzoom'
+call plug#end()
+
 set relativenumber
 set number
 :set tabstop=4
+set clipboard=unnamedplus
+set paste
 
 au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html
     \ set tabstop=4 |
@@ -11,10 +31,6 @@ au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
-
-source $VIMRUNTIME/mswin.vim
-behave mswin
-
 
 " up to here del"
 
@@ -34,3 +50,9 @@ set showmatch "highlights matching brackets
 set wildmenu "graphical auto complete menu
 
 set noswapfile
+
+
+colorscheme slate
+colorscheme gruvbox
+
+autocmd BufWritePost ~/.suckless/dwmblocks/config.h !cd ~/suckless/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
