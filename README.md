@@ -3,7 +3,7 @@ Dot files for Vim and Bash
 
 ## About:
 - Files located in the `home` directory can be placed in `~`
-- Files located in the `other` directory are not specifically for linux but can be are kept as backups. E.g. `_vimrc` is for the windows gVim version of Vim.
+- Files located in the `other` directory are not specifically for linux but can be are kept as backups. E.g. `_vimrc` is for the windows gVim version of Vim
 
 
 ## Keybinds for /vim-commentary
