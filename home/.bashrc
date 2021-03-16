@@ -28,6 +28,9 @@ alias ll='ls -alF --color'
 alias la='ls -A'
 alias l='ls -CF'
 
+
+# suckless -----------
+
 alias ps='cd ~/Personal/'
 alias sck='cd ~/suckless'
 alias sckdwm='cd ~/suckless/dwm'
@@ -35,8 +38,22 @@ alias sckst='cd ~/suckless/st'
 alias sckdmenu='cd ~/suckless/dmenu'
 alias sckdwmb='cd ~/suckless/dwmblocks'
 
+# dwmblocks scripts folder
+alias dwmbs="cd /usr/bin/ && ll | grep -i sb-"
+
+# ---------------------
+
 # cd's to hdd
 alias hdd='cd /mnt/hdd'
+
+# Go to fonts folder
+alias fonts='cd /usr/share/fonts && ls -lsa'
+
+# Go to screenshots folder
+alias scrn='cd ~/Pictures/screenshots'
+
+# Go to screenshots folder and open pcmanfm
+alias scrnfm='cd ~/Pictures/screenshots && pcmanfm'
 
 # edits the config files with root permissions for suckless utils
 alias con='sudo nvim config.h'
@@ -44,11 +61,6 @@ alias con='sudo nvim config.h'
 # Volume mixer for pulseaudio
 alias vol='pulsemixer'
 
-# Go to fonts folder
-alias fonts='cd /usr/share/fonts && ls -lsa'
-
-# dwmblocks scripts folder
-alias dwmbs='cd /usr/bin/ && ll | grep -i sb-'
 
 # PS1 Bash Prompt
 PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;56m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\\$\[$(tput sgr0)\] "
