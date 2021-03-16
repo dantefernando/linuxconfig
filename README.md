@@ -19,4 +19,3 @@ Dot files for Vim and Bash
 - `F7` Toggles Indent Guide Lines
 
 
-test
