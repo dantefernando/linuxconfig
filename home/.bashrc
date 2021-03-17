@@ -31,17 +31,20 @@ alias l='ls -CF'
 
 # suckless -----------
 
-alias ps='cd ~/Personal/'
 alias sck='cd ~/suckless'
 alias sckdwm='cd ~/suckless/dwm'
 alias sckst='cd ~/suckless/st'
 alias sckdmenu='cd ~/suckless/dmenu'
 alias sckdwmb='cd ~/suckless/dwmblocks'
-
-# dwmblocks scripts folder
 alias dwmbs="cd /usr/bin/ && ll | grep -i sb-"
 
 # ---------------------
+
+# cd Personal
+alias ps='cd ~/Personal/'
+
+# cd ~/Personal/github
+alias gh='cd ~/Personal/github'
 
 # cd's to hdd
 alias hdd='cd /mnt/hdd'
@@ -64,4 +67,5 @@ alias vol='pulsemixer'
 
 # PS1 Bash Prompt
 PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;56m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\\$\[$(tput sgr0)\] "
+
 
