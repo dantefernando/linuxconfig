@@ -53,10 +53,10 @@ alias hdd='cd /mnt/hdd'
 alias fonts='cd /usr/share/fonts && ls -lsa'
 
 # Go to screenshots folder
-alias scrn='cd ~/Pictures/screenshots'
+alias scrn='cd ~/Personal/Pictures/screenshots'
 
 # Go to screenshots folder and open pcmanfm
-alias scrnfm='cd ~/Pictures/screenshots && pcmanfm'
+alias scrnfm='cd ~/Personal/Pictures/screenshots && pcmanfm'
 
 # edits the config files with root permissions for suckless utils
 alias con='sudo nvim config.h'
@@ -64,8 +64,10 @@ alias con='sudo nvim config.h'
 # Volume mixer for pulseaudio
 alias vol='pulsemixer'
 
+# Adds statusbar scripts to $PATH 
+export PATH=~/.local/bin/statusbar/:$PATH
+
 
 # PS1 Bash Prompt
 PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;56m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\\$\[$(tput sgr0)\] "
-
 
