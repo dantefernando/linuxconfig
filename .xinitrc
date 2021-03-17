@@ -1,3 +1,3 @@
 xrdb .Xresources &
-feh --bg-scale ~/Pictures/wallpapers RedLeaves.jpg &
+feh --bg-scale ~/Personal/Pictures/wallpapers RedLeaves.jpg &
 exec dwm

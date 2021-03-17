@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# scrot snip focused window border
+scrot ~/Personal/Pictures/screenshots/%d-%b-%Y.png

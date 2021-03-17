@@ -66,6 +66,7 @@ alias vol='pulsemixer'
 
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
+export PATH=~/.local/bin/:$PATH
 
 
 # PS1 Bash Prompt
