@@ -36,7 +36,7 @@ alias sckdwm='cd ~/suckless/dwm'
 alias sckst='cd ~/suckless/st'
 alias sckdmenu='cd ~/suckless/dmenu'
 alias sckdwmb='cd ~/suckless/dwmblocks'
-alias dwmbs="cd /usr/bin/ && ll | grep -i sb-"
+alias dwmbs="cd ~/.local/bin/statusbar && ll | grep -i sb-"
 
 # ---------------------
 
