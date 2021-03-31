@@ -1,3 +1,4 @@
-xrdb .Xresources &
-feh --bg-scale ~/Personal/Pictures/wallpapers RedLeaves.jpg &
+xrdb ~/.Xresources &
+feh --bg-scale ~/personal/pictures/wallpapers RedLeaves.jpg &
+xset r rate 400 74 &
 exec dwm

@@ -1,6 +1,10 @@
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000000
-HISTFILESIZE=10000000
+
+# HISTSIZE=10000000
+# HISTFILESIZE=10000000
+
+# "Infinite" bash history file size 
+HISTSIZE= HISTFILESIZE=
 
 
 # enable color support of ls and also add handy aliases
@@ -41,10 +45,10 @@ alias dwmbs="cd ~/.local/bin/statusbar && ll | grep -i sb-"
 # ---------------------
 
 # cd Personal
-alias ps='cd ~/Personal/'
+alias ps='cd ~/personal/'
 
 # cd ~/Personal/github
-alias gh='cd ~/Personal/github'
+alias gh='cd ~/personal/documents/github'
 
 # cd's to hdd
 alias hdd='cd /mnt/hdd'
@@ -53,10 +57,10 @@ alias hdd='cd /mnt/hdd'
 alias fonts='cd /usr/share/fonts && ls -lsa'
 
 # Go to screenshots folder
-alias scrn='cd ~/Personal/Pictures/screenshots'
+alias pics='cd ~/personal/pictures/screenshots'
 
 # Go to screenshots folder and open pcmanfm
-alias scrnfm='cd ~/Personal/Pictures/screenshots && pcmanfm'
+alias picsfm='cd ~/personal/pictures/screenshots && pcmanfm'
 
 # edits the config files with root permissions for suckless utils
 alias con='sudo nvim config.h'
