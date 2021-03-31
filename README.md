@@ -1,15 +1,18 @@
 # LinuxConfig
-Dot files for Vim and Bash
+Dot files for Neovim/Vim and Bash
 
 ## About:
 - Files located in the `.local/bin/` directory can be placed anywhere in `$PATH`
 
+--------------------------
 
-## Keybinds for /vim-commentary
+## Neovim/Vim Keybinds
+
+### Keybinds for /vim-commentary
 - `gcc` comment without selecting line
 - `gc` comment while line(s) are selected 
 
-##  Keybinds for Vim/Neovim
+###  Keybinds for Vim/Neovim
 - `F12` groes to next tab
 - `F11` goes to previous tab
 - `F10` creates a new tab in Vim
