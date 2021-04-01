@@ -1,5 +1,1 @@
-#!/bin/sh
-
-# scrot snip with selection of rectangular area
-scrot -s ~/Personal/Pictures/snips/%d-%b-%Y.png
-
+snip
