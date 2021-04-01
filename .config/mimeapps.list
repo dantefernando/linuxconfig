@@ -1,1 +1,11 @@
-mimeapps.list
+[Default Applications]
+image/png=userapp-sxiv-8A8S00.desktop
+text/plain=nvim.desktop
+image/jpeg=userapp-sxiv-8A8S00.desktop
+
+[Added Associations]
+image/png=userapp-sxiv-7K60Z0.desktop;userapp-sxiv-BEY8Z0.desktop;sxiv.desktop;feh.desktop;Feh.desktop;
+text/plain=nvim.desktop;
+image/jpeg=userapp-sxiv-8A8S00.desktop;
+
+[Removed Associations]
