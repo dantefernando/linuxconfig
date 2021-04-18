@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Prints the backlight amount using xbacklight
+
+amount="$(xbacklight)"
+
+
+# The script is bugged out idk why
+echo "⭐${amount%.*}"%

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Synchronize all current scripts and config files to my linuxconfig/ repo location.
+
+
+# Set cloned linuxconfig github dir location here
+repoLocation=~/personal/documents/github/linuxconfig
+
+# Array of files/folders to copy over 
+files=(
+		~/.Xauthority
+		~/.Xresources
+		~/.bash_profile
+		~/.bashrc
+		~/.vimrc
+		~/.xinitrc
+
+		~/.config/mimeapps.list
+		~/.config/nvim/init.vim
+		~/.config/nvim/autoload/plug.vim
+		~/.config/nvim/vim-plug/plugins.vim
+
+		~/.config/ranger/rc.conf
+
+		~/.local/bin
+
+		~/personal/pictures/wallpapers
+	)
+
+
+# Make temp dir in /tmp/
+tempDir=$(mktemp -d)
+
+
+# copy files to temporary dir
+for file in ${files[@]}; do
+	cp -rv --parents $file $tempDir
+done
+
+# Copies normal files and hidden files
+cp -rf $tempDir/home/$USER/* $repoLocation
+cp -rf $tempDir/home/$USER/.* $repoLocation
+
+
+echo "Copied to testing!"
+
+
+rm -rf $tempDir && echo "Temp Dir Deleted!"
+

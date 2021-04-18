@@ -39,9 +39,17 @@ alias sudo='doas'
 
 alias sck='cd ~/suckless'
 alias sckdwm='cd ~/suckless/dwm'
+alias sckdwmc='cd ~/suckless/dwm && con'
+
 alias sckst='cd ~/suckless/st'
+alias sckstc='cd ~/suckless/dwm && con'
+
 alias sckdmenu='cd ~/suckless/dmenu'
+alias sckdmenuc='cd ~/suckless/dwm && con'
+
 alias sckdwmb='cd ~/suckless/dwmblocks'
+alias sckdwmbc='cd ~/suckless/dwm && con'
+
 alias dwmbs="cd ~/.local/bin/statusbar && ll | grep -i sb-"
 
 # ---------------------
@@ -59,7 +67,7 @@ alias hdd='cd /mnt/hdd'
 alias fonts='cd /usr/share/fonts && ls -lsa'
 
 # Go to screenshots folder
-alias pics='cd ~/personal/pictures/screenshots'
+alias pics='cd ~/personal/pictures'
 
 # Go to screenshots folder and open pcmanfm
 alias picsfm='cd ~/personal/pictures/screenshots && pcmanfm'

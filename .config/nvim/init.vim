@@ -4,7 +4,7 @@ set relativenumber
 set number
 
 
-au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt
+au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js
      \ set tabstop=4 |
      \ set softtabstop=4 |
      \ set shiftwidth=4 |
