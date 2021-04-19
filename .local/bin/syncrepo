@@ -3,10 +3,12 @@
 # Synchronize all current scripts and config files to my linuxconfig/ repo location.
 
 
-# Set cloned linuxconfig github dir location here
+# Set cloned linuxconfig github directory location here
 repoLocation=~/personal/documents/github/linuxconfig
 
+
 # Array of files/folders to copy over 
+# Edit directories/files to be synced to the repoLocation
 files=(
 		~/.Xauthority
 		~/.Xresources
@@ -28,11 +30,12 @@ files=(
 	)
 
 
-# Make temp dir in /tmp/
+# Make temp dir in /tmp/ to store temporary files
 tempDir=$(mktemp -d)
 
 
-# copy files to temporary dir
+# Iterate over each file and copy it to temporary dir
+# as well as any parent directories
 for file in ${files[@]}; do
 	cp -rv --parents $file $tempDir
 done
@@ -41,9 +44,23 @@ done
 cp -rf $tempDir/home/$USER/* $repoLocation
 cp -rf $tempDir/home/$USER/.* $repoLocation
 
+echo ""
+echo ""
+echo ""
+echo "Copied to ${repoLocation}!"
+echo ""
+echo ""
 
-echo "Copied to testing!"
+# Deletes the temporary folder
+rm -rf $tempDir && echo "Temp Dir: ${tempDir} DELETED!"
+echo ""
+echo ""
+echo ""
 
+# cd's to the repoLocation and gets the git status of any changed files
+cd $repoLocation && git status
+echo ""
+echo ""
 
-rm -rf $tempDir && echo "Temp Dir Deleted!"
-
+# cd's back to the prev dir
+cd -

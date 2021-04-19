@@ -78,6 +78,9 @@ alias con='doas nvim config.h'
 # Volume mixer for pulseaudio
 alias vol='pulsemixer'
 
+# linuxconfig git repo
+alias lx='cd ~/personal/documents/github/linuxconfig'
+
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
 export PATH=~/.local/bin/:$PATH
