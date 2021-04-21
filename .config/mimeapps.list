@@ -4,8 +4,11 @@ text/plain=nvim.desktop
 image/jpeg=userapp-sxiv-8A8S00.desktop
 
 [Added Associations]
-image/png=userapp-sxiv-7K60Z0.desktop;userapp-sxiv-BEY8Z0.desktop;sxiv.desktop;feh.desktop;Feh.desktop;
+image/png=userapp-sxiv-7K60Z0.desktop;
 text/plain=nvim.desktop;
-image/jpeg=userapp-sxiv-8A8S00.desktop;
+image/jpeg=userapp-sxiv-7K60Z0.desktop;
+video/mp4=mpv.desktop;
+video/mov=mpv.desktop;
+video/mkv=mpv.desktop;
 
 [Removed Associations]

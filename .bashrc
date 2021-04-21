@@ -34,6 +34,8 @@ alias l='ls -CF'
 
 alias sudo='doas'
 
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
 
 # suckless -----------
 
