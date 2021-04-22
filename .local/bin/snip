@@ -1,5 +1,20 @@
 #!/bin/sh
 
+# Takes a snip using scrot and then stores it in snipsFolder and copies it to the xclipboard for ease of use.
+
+# Change this to your folder where snips will be stored
+snipsFolder=~/personal/pictures/snips
+
+
 # scrot snip with selection of rectangular area
-scrot -s ~/personal/pictures/snips/%d-%b-%Y.png
+# scrot -s ~/personal/pictures/snips/%d-%b-%Y.png 
+scrot -s $snipsFolder/%d-%b-%Y.png 
+
+
+# Gets the most recent file in the directory
+file=$(ls -Art $snipsFolder | tail -n 1)
+
+
+# Copies the snipped file to to the x clipboard for pasting.
+xclip -selection clipboard -t image/png $snipsFolder/$file
 

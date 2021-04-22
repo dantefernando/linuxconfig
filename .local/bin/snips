@@ -1,4 +1,19 @@
 #!/bin/sh
 
+# Takes a screenshot using scrot and then stores it in screenshotsFolder and copies it to the xclipboard for ease of use.
+
+# Change this to your folder where screenshots will be stored
+screenshotsFolder=~/personal/pictures/screenshots
+
+
 # scrot snip focused window border
-scrot ~/personal/pictures/screenshots/%d-%b-%Y.png
+# scrot ~/personal/pictures/screenshots/%d-%b-%Y.png
+scrot $screenshotsFolder/%d-%b-%Y.png 
+
+
+# Gets the most recent file in the directory
+file=$(ls -Art $screenshotsFolder | tail -n 1)
+
+
+# Copies the screenshot file to to the x clipboard for pasting.
+xclip -selection clipboard -t image/png $screenshotsFolder/$file

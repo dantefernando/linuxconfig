@@ -10,7 +10,7 @@ HISTSIZE= HISTFILESIZE=
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -h --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -28,7 +28,7 @@ fi
 set -o vi  
 
 # some ls aliases
-alias ll='ls -alF --color'
+alias ll='ls -alhF --color'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -66,7 +66,7 @@ alias gh='cd ~/personal/documents/github'
 alias hdd='cd /mnt/hdd'
 
 # Go to fonts folder
-alias fonts='cd /usr/share/fonts && ls -lsa'
+alias fonts='cd /usr/share/fonts && ls -lsah'
 
 # Go to screenshots folder
 alias pics='cd ~/personal/pictures'
