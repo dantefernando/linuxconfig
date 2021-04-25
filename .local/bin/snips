@@ -6,14 +6,9 @@
 screenshotsFolder=~/personal/pictures/screenshots
 
 
-# scrot snip focused window border
+# 1. Scrot snip the whole screen
+# 2. Gets the most recent file in the directory
+# 3. Copies the screenshot file to to the x clipboard for pasting.
+scrot $screenshotsFolder/%d-%b-%Y.png && file=$(ls -Art $screenshotsFolder | tail -n 1) ; xclip -selection clipboard -t image/png $screenshotsFolder/$file
+
 # scrot ~/personal/pictures/screenshots/%d-%b-%Y.png
-scrot $screenshotsFolder/%d-%b-%Y.png 
-
-
-# Gets the most recent file in the directory
-file=$(ls -Art $screenshotsFolder | tail -n 1)
-
-
-# Copies the screenshot file to to the x clipboard for pasting.
-xclip -selection clipboard -t image/png $screenshotsFolder/$file

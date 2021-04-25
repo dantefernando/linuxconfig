@@ -2,6 +2,7 @@
 image/png=userapp-sxiv-8A8S00.desktop
 text/plain=nvim.desktop
 image/jpeg=userapp-sxiv-8A8S00.desktop
+video/quicktime=mpv.desktop
 
 [Added Associations]
 image/png=userapp-sxiv-7K60Z0.desktop;
@@ -10,5 +11,6 @@ image/jpeg=userapp-sxiv-7K60Z0.desktop;
 video/mp4=mpv.desktop;
 video/mov=mpv.desktop;
 video/mkv=mpv.desktop;
+video/quicktime=mpv.desktop;
 
 [Removed Associations]
