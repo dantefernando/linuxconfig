@@ -44,23 +44,17 @@ done
 cp -rf $tempDir/home/$USER/* $repoLocation
 cp -rf $tempDir/home/$USER/.* $repoLocation
 
-echo ""
-echo ""
-echo ""
-echo "Copied to ${repoLocation}!"
-echo ""
-echo ""
+echo -e "\n\n\n#####################################"
+echo -e "\nCopied to ${repoLocation}!"
 
 # Deletes the temporary folder
-rm -rf $tempDir && echo "Temp Dir: ${tempDir} DELETED!"
-echo ""
-echo ""
-echo ""
+rm -rf $tempDir && echo -e "\nTemp Dir: ${tempDir} DELETED!\n"
+
+echo -e "#####################################\n\n"
 
 # cd's to the repoLocation and gets the git status of any changed files
 cd $repoLocation && git status
-echo ""
-echo ""
+echo -e "\n\n"
 
 # cd's back to the prev dir
 cd -
