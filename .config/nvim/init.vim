@@ -46,3 +46,6 @@ let g:indent_guides_guide_size = 4
 " When it starts
 let g:indent_guides_start_level = 1
 
+" Set Vim Airline Theme
+let g:airline_theme='fruit_punch'
+
