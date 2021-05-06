@@ -7,7 +7,7 @@
 HISTSIZE= HISTFILESIZE=
 
 
-# enable color support of ls and also add handy aliases
+# enable color support of ls and also add aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls -h --color=auto'
@@ -34,7 +34,8 @@ alias l='ls -CF'
 
 alias sudo='doas'
 
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# When exiting ranger, the user will be cd'd into the dir that they were in
+alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
 
 
 # suckless -----------
@@ -44,13 +45,13 @@ alias sckdwm='cd ~/suckless/dwm'
 alias sckdwmc='cd ~/suckless/dwm && con'
 
 alias sckst='cd ~/suckless/st'
-alias sckstc='cd ~/suckless/dwm && con'
+alias sckstc='cd ~/suckless/st && con'
 
 alias sckdmenu='cd ~/suckless/dmenu'
-alias sckdmenuc='cd ~/suckless/dwm && con'
+alias sckdmenuc='cd ~/suckless/dmenu && con'
 
 alias sckdwmb='cd ~/suckless/dwmblocks'
-alias sckdwmbc='cd ~/suckless/dwm && con'
+alias sckdwmbc='cd ~/suckless/dwmblocks && con'
 
 alias dwmbs="cd ~/.local/bin/statusbar && ll | grep -i sb-"
 
@@ -71,6 +72,8 @@ alias fonts='cd /usr/share/fonts && ls -lsah'
 # Go to screenshots folder
 alias pics='cd ~/personal/pictures'
 
+alias vids='cd ~/personal/videos/'
+
 # Go to screenshots folder and open pcmanfm
 alias picsfm='cd ~/personal/pictures/screenshots && pcmanfm'
 
@@ -88,6 +91,6 @@ export PATH=~/.local/bin/statusbar/:$PATH
 export PATH=~/.local/bin/:$PATH
 
 
-# PS1 Bash Prompt
+# PS1 Bash Prompt. Looks like: [dante@archbox ~]$
 PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;56m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\\$\[$(tput sgr0)\] "
 
