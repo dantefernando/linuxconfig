@@ -3,6 +3,11 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 set relativenumber
 set number
 
+" Sets the leader key
+let mapleader =" " 
+
+" Compile document, be it groff/LaTeX/markdown/etc.
+map <leader>c :w! \| !compiler "<c-r>%"<CR><esc>
 
 au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js
      \ set tabstop=4 |

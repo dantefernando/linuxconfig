@@ -19,5 +19,6 @@ Dot files for Neovim/Vim and Bash
 - `F9` runs python program inside Vim interface
 - `F8` clears highlighting for searches using `:noh` command in Vim
 - `F7` Toggles Indent Guide Lines
+- `<leader>c` Compiles the markdown file into a .PDF doc in the same working directory
 
 
