@@ -19,7 +19,8 @@ au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js
      \ set fileformat=unix |
 
 colorscheme slate
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme molokai
 
 set encoding=utf-8
 set laststatus=2
