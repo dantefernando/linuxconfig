@@ -6,7 +6,8 @@ set number
 " Sets the leader key
 let mapleader =" " 
 
-" Compile document, be it groff/LaTeX/markdown/etc.
+" Compile document, be it markdown or py using compiler script
+" ~/.local/bin/compiler
 map <leader>c :w! \| !compiler "<c-r>%"<CR><esc>
 
 au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js

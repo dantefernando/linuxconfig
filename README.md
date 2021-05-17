@@ -1,24 +1,27 @@
 # LinuxConfig
-Dot files for Neovim/Vim and Bash
+Dot files for my **Arch Linux System**, Neovim/Vim and Bash as well as other applications
 
 ## About:
-- Files located in the `.local/bin/` directory can be placed anywhere in `$PATH`
+- Files located in the `.local/bin/` directory are bash shell scripts that can be placed anywhere in `$PATH`
 
 --------------------------
 
-## Neovim/Vim Keybinds
+## About Neovim Keybinds
+- Neovim / nvim is my main editor with updated plugins and configs etc.
+  - All settings for Neovim are in `~/.config/nvim/init.vim`
+	- To install plugins, run Neovim using `nvim` in the terminal, then type: `:PlugInstall`
 
-### Keybinds for /vim-commentary
-- `gcc` comment without selecting line
-- `gc` comment while line(s) are selected 
-
-###  Keybinds for Vim/Neovim
-- `F12` groes to next tab
+- `<leader>` is set to the spacebar
+- `gcc` comment without selecting line *(/vim-commentary)*
+- `gc` comment while line(s) are selected *(/vim-commentary)*
+- `F12` goes to next tab
 - `F11` goes to previous tab
 - `F10` creates a new tab in Vim
-- `F9` runs python program inside Vim interface
+- `F9` runs python program inside Vim interface **(Windows Only)**
+	- For Linux use `<leader>c` instead
 - `F8` clears highlighting for searches using `:noh` command in Vim
 - `F7` Toggles Indent Guide Lines
-- `<leader>c` Compiles the markdown file into a .PDF doc in the same working directory
-
+- `<leader>c` Compiles/Runs an interpreter on the file 
+	- E.g. Markdown file -> .PDF in the same working directory
+	- Python -> opens a new st terminal and runs with the python3 interpreter
 

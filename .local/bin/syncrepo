@@ -29,6 +29,14 @@ files=(
 		~/personal/pictures/wallpapers
 	)
 
+# Get user choice
+echo -e "Sync Pacman Packages? [Y/n]" && read -p "Your Choice: " choice
+
+case $choice in
+	y | Y | yes | Yes | YES) echo -e "\nSyncing pacman packages list..." && pacman -Qe > $repoLocation/pacmanPackages/pacmanQe && pacman -Q > $repoLocation/pacmanPackages/pacmanQ && echo -e "\nPacman Packages updated!" ;;
+	*) echo "Syncing of pacman packages cancelled" ;;
+esac
+
 
 # Make temp dir in /tmp/ to store temporary files
 tempDir=$(mktemp -d)
@@ -55,6 +63,7 @@ echo -e "#####################################\n\n"
 # cd's to the repoLocation and gets the git status of any changed files
 cd $repoLocation && git status
 echo -e "\n\n"
+
 
 # cd's back to the prev dir
 cd - > /dev/null
