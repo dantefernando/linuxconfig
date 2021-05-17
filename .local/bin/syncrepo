@@ -57,4 +57,4 @@ cd $repoLocation && git status
 echo -e "\n\n"
 
 # cd's back to the prev dir
-cd -
+cd - > /dev/null
