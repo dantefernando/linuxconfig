@@ -86,6 +86,9 @@ alias vol='pulsemixer'
 # linuxconfig git repo
 alias lx='cd ~/personal/documents/github/linuxconfig'
 
+# opens README.pdf file in the working directory with zathura 
+alias zr='zathura README.pdf'
+
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
 export PATH=~/.local/bin/:$PATH
