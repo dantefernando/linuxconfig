@@ -52,7 +52,4 @@ set wildmenu "graphical auto complete menu
 set noswapfile
 
 
-colorscheme slate
-colorscheme gruvbox
-
 autocmd BufWritePost ~/.suckless/dwmblocks/config.h !cd ~/suckless/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
