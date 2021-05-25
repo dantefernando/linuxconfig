@@ -78,7 +78,7 @@ alias vids='cd ~/personal/videos/'
 alias picsfm='cd ~/personal/pictures/screenshots && pcmanfm'
 
 # edits the config files with root permissions for suckless utils
-alias con='doas nvim config.h'
+alias con='nvim config.h'
 
 # Volume mixer for pulseaudio
 alias vol='pulsemixer'

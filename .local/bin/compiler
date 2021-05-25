@@ -5,6 +5,7 @@
 # What this script can do:
 # - Compiles .md (using pandoc)
 # - Can run the python interpreter for .py files in a separate st window
+# - Compiles config.h C header files for suckless apps e.g. dwm, dmenu, st etc.
 
 file=$(readlink -f "$1")
 dir=${file%/*}
@@ -16,4 +17,5 @@ cd "$dir" || exit 1
 case "$ext" in
     md) pandoc -t ms --highlight-style=kate -s -o "$base".pdf "$file" ;;
     py) st -e python "$file" ;;
+    h) doas make clean install ;;
 esac
