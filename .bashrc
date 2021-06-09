@@ -93,7 +93,7 @@ alias zr='zathura README.pdf'
 alias tty-clock='tty-clock -C 4'
 
 # Opens my timetable for school
-alias tt='firefox ~/personal/documents/school/gcse/timetable.html'
+alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
 
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
