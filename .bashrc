@@ -40,18 +40,18 @@ alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $
 
 # suckless -----------
 
-alias sck='cd ~/suckless'
-alias sckdwm='cd ~/suckless/dwm'
-alias sckdwmc='cd ~/suckless/dwm && con'
+alias sck='cd ~/programs/suckless'
+alias sckdwm='cd ~/programs/suckless/dwm'
+alias sckdwmc='cd ~/programs/suckless/dwm && con'
 
-alias sckst='cd ~/suckless/st'
-alias sckstc='cd ~/suckless/st && con'
+alias sckst='cd ~/programs/suckless/st'
+alias sckstc='cd ~/programs/suckless/st && con'
 
-alias sckdmenu='cd ~/suckless/dmenu'
-alias sckdmenuc='cd ~/suckless/dmenu && con'
+alias sckdmenu='cd ~/programs/suckless/dmenu'
+alias sckdmenuc='cd ~/programs/suckless/dmenu && con'
 
-alias sckdwmb='cd ~/suckless/dwmblocks'
-alias sckdwmbc='cd ~/suckless/dwmblocks && con'
+alias sckdwmb='cd ~/programs/suckless/dwmblocks'
+alias sckdwmbc='cd ~/programs/suckless/dwmblocks && con'
 
 alias dwmbs="cd ~/.local/bin/statusbar && ll | grep -i sb-"
 
@@ -88,6 +88,12 @@ alias lx='cd ~/personal/documents/github/linuxconfig'
 
 # opens README.pdf file in the working directory with zathura 
 alias zr='zathura README.pdf'
+
+# open tty-clock with 4th color (pink)
+alias tty-clock='tty-clock -C 4'
+
+# Opens my timetable for school
+alias tt='firefox ~/personal/documents/school/gcse/timetable.html'
 
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH

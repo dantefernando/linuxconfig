@@ -37,6 +37,7 @@ ca-certificates-mozilla 3.65-1
 ca-certificates-utils 20181109-4
 cairo 1.17.4-5
 cantarell-fonts 1:0.301-1
+cbonsai 1.0.4-1
 cdparanoia 10.2-8
 clucene 2.3.3.4-11
 colord 1.4.5-1
@@ -286,6 +287,8 @@ kbd 2.4.0-2
 keyutils 1.6.3-1
 kmod 28-1
 krb5 1.19.1-1
+kvantum-qt5 0.19.0-1
+kwindowsystem 5.82.0-1
 l-smash 2.14.5-2
 lame 3.100-3
 lapack 3.9.1-1
@@ -503,6 +506,7 @@ lua52 5.2.4-5
 lua53 5.3.6-1
 luajit 2.0.5-3
 lvm2 2.03.12-1
+lxappearance 0.6.3-4
 lxmenu-data 0.1.5-3
 lz4 1:1.9.3-1
 lzo 2.10-3
