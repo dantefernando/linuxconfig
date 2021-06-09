@@ -25,3 +25,16 @@ Dot files for my **Arch Linux System**, Neovim/Vim and Bash as well as other app
 	- E.g. Markdown file -> .PDF in the same working directory
 	- Python -> opens a new st terminal and runs with the python3 interpreter
 
+## GTK3 Cherry Theme
+- Download gtk theme manager: `lxappearance`
+- Move theme from `linuxconfig/usr/share/themes/` to `/usr/share/themes/`
+- Move icons from `linuxconfig/usr/share/icons/` to `/usr/share/icons/`
+
+### You can also download the GTK3 themes here: 
+- GUI Theme: https://www.gnome-look.org/p/1316887/
+		
+	- Download: `Material-Black-Cherry-3.36_1.9.3.zip`
+
+- Icon Theme: https://www.pling.com/p/1333360/
+
+	- Download: `Cherry-Numix-2021_1.9.3.zip`
