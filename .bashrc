@@ -32,7 +32,9 @@ alias ll='ls -alhF --color'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias sudo='doas'
+# Alias for sudo to execute the doas command instead
+# alias sudo='doas'
+
 
 # When exiting ranger, the user will be cd'd into the dir that they were in
 alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
@@ -94,6 +96,11 @@ alias tty-clock='tty-clock -C 4'
 
 # Opens my timetable for school
 alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
+
+# runs mc server
+
+# alias mcserver='cd ~/downloads/Minecraft/ && ~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
+alias mcserver='~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
 
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
