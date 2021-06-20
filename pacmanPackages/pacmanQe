@@ -69,6 +69,7 @@ sed 4.8-1
 spotify 1:1.1.55.494-1
 sudo 1.9.7-1
 texinfo 6.7-3
+tmux 3.2_a-1
 ttf-font-awesome 5.15.3-1
 ttf-joypixels 6.5.0-1
 ttf-linux-libertine 5.3.0-7

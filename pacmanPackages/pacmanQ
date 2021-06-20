@@ -447,6 +447,7 @@ libunistring 0.9.10-3
 libunwind 1.5.0-1
 libupnp 1.14.7-1
 libusb 1.0.24-2
+libutempter 1.2.1-1
 libuv 1.41.0-1
 libva 2.11.0-1
 libvdpau 1.4-1
@@ -575,7 +576,7 @@ perl-timedate 2.33-2
 pinentry 1.1.1-1
 pixman 0.40.0-1
 pkgconf 1.7.3-1
-polkit 0.118-1
+polkit 0.119-1
 poppler 21.05.0-1
 poppler-data 0.4.10-1
 poppler-glib 21.05.0-1
@@ -670,6 +671,7 @@ tbb 2020.3-1
 tdb 1.4.3-4
 texinfo 6.7-3
 thin-provisioning-tools 0.9.0-1
+tmux 3.2_a-1
 tracker3 3.1.1-2
 tslib 1.22-1
 ttf-font-awesome 5.15.3-1
