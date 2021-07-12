@@ -95,7 +95,7 @@ alias zr='zathura README.pdf'
 alias tty-clock='tty-clock -C 4'
 
 # Opens my timetable for school
-alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
+# alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
 
 # runs mc server
 
@@ -104,6 +104,7 @@ alias mcserver='~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar min
 
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
+export PATH=~/.local/bin/screencapture/:$PATH
 export PATH=~/.local/bin/:$PATH
 
 

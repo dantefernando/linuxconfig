@@ -3,12 +3,30 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 set relativenumber
 set number
 
+" KEYBINDS =================================================
+
 " Sets the leader key
 let mapleader =" " 
 
 " Compile document, be it markdown or py using compiler script
 " ~/.local/bin/compiler
 map <leader>c :w! \| !compiler "<c-r>%"<CR><esc>
+
+nnoremap <F8> :noh <esc>
+nnoremap <F7> :IndentGuidesToggle <esc>
+nnoremap <F10> :tabnew <esc>
+nnoremap <C-n> :tabn <esc>
+nnoremap <C-p> :tabp <esc>
+" nnoremap <leader>n :tabn <esc>
+" nnoremap <leader>p :tabp <esc>
+
+" NERD TREE KEYBINDS #########################
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
+
+" ==========================================================
 
 au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js
      \ set tabstop=4 |
@@ -30,15 +48,9 @@ set hlsearch "highlights matching searches
 set showmatch "highlights matching brackets
 set wildmenu "graphical auto complete menu
 
-nnoremap <F8> :noh <esc>
-nnoremap <F7> :IndentGuidesToggle <esc>
-nnoremap <F10> :tabnew <esc>
-" nnoremap <C-TAB> :tabn <esc>
-nnoremap <F11> :tabp <esc>
 
-
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+" autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+" autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 

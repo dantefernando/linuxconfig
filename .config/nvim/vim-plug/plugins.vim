@@ -23,5 +23,6 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'ervandew/supertab'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'preservim/nerdtree'
 
 call plug#end()

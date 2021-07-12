@@ -11,7 +11,11 @@ snipsFolder=~/personal/pictures/snips/
 # 2. Gets the most recent file in the directory
 # 3. Copies the snipped file to to the x clipboard for pasting.
 # 4. Saves it to snipsFolder
-scrot -s $snipsFolder/%d-%b-%Y.png && file=$(ls -Art $snipsFolder | tail -n 1) && xclip -loops 1 -selection clipboard -t image/png $snipsFolder/$file
 
-# scrot -s ~/personal/pictures/snips/%d-%b-%Y.png 
+# UNCOMMENT FOR SAVING WITH CLIPBOARD
+# scrot -s $snipsFolder/%d-%b-%Y.png && file=$(ls -Art $snipsFolder | tail -n 1) && xclip -loops 1 -selection clipboard -t image/png $snipsFolder/$file
+
+
+# UNCOMMENT FOR SAVING WITHOUT CLIPBOARD
+scrot -s $snipsFolder/%d-%b-%Y.png 
 

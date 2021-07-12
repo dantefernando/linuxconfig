@@ -10,9 +10,12 @@
 
 # Always keep display turned on
 # Settings can be checked with: xset -q
-(xset s off) &
-(xset -dpms) &
-(xset s noblank)&
+# (xset s off) &
+# (xset -dpms) &
+# (xset s noblank)&
+
+# Hides mouse after 3 seconds
+unclutter -idle 3 &
 
 # Exec dwm
 (exec dwm)
