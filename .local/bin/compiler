@@ -2,7 +2,13 @@
 
 # Credits to Luke Smith for script https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/compiler
 
-# What this script can do:
+# This script is called by neovim in ~/.config/nvim/init.vim with <leader>c
+
+# This script will take the name of the file open in vim,
+# then find the directory, base and extension of the file,
+# then it will compile/interpret/open the file with it's specified application
+
+# What files this script can compile/interpret/open:
 # - Compiles .md (using pandoc)
 # - Can run the python interpreter for .py files in a separate st window
 # - Compiles config.h C header files with "make" for suckless apps e.g. dwm, dmenu, st etc.
@@ -21,3 +27,4 @@ case "$ext" in
     h) doas make clean install ;;
     cpp) gcc "$base".cpp -lstdc++ -o "$base" ;;
 esac
+

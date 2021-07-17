@@ -30,6 +30,11 @@ files=(
 		~/personal/pictures/wallpapers
 	)
 
+
+# Make temp dir in /tmp/ to store temporary files
+tempDir=$(mktemp -d)
+
+
 # Get user choice
 echo -e "Sync Pacman Packages? [Y/n]" && read -p "Your Choice: " choice
 
@@ -38,9 +43,6 @@ case $choice in
 	*) echo "Syncing of pacman packages cancelled" ;;
 esac
 
-
-# Make temp dir in /tmp/ to store temporary files
-tempDir=$(mktemp -d)
 
 
 # Iterate over each file and copy it to temporary dir

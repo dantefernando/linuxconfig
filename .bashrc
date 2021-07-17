@@ -24,6 +24,9 @@ fi
 # === Custom Bash Commands added by Dante === #
 # ===================================== #
 
+# Change program output for programs:
+alias diff='diff --color'
+
 # Sets to terminal to vi mode
 set -o vi  
 
@@ -43,8 +46,8 @@ alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $
 # suckless -----------
 
 alias sck='cd ~/programs/suckless'
-alias sckdwm='cd ~/programs/suckless/dwm'
-alias sckdwmc='cd ~/programs/suckless/dwm && con'
+alias sckdwm='cd ~/programs/suckless/dwmNoTitle'
+alias sckdwmc='cd ~/programs/suckless/dwmNoTitle && con'
 
 alias sckst='cd ~/programs/suckless/st'
 alias sckstc='cd ~/programs/suckless/st && con'
@@ -88,8 +91,11 @@ alias vol='pulsemixer'
 # linuxconfig git repo
 alias lx='cd ~/personal/documents/github/linuxconfig'
 
+# Unix Elitism Flex LOL
+alias genius='curl -L https://git.io/unix && echo'
+
 # opens README.pdf file in the working directory with zathura 
-alias zr='zathura README.pdf'
+alias zr='~/.local/bin/openREADME'
 
 # open tty-clock with 4th color (pink)
 alias tty-clock='tty-clock -C 4'

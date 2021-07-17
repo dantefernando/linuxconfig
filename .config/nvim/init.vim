@@ -28,6 +28,14 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 
 " ==========================================================
 
+
+" Pane Movement
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+
 au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js
      \ set tabstop=4 |
      \ set softtabstop=4 |
@@ -54,6 +62,10 @@ set wildmenu "graphical auto complete menu
 
 autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
 
 " Start on vim Startup
 let g:indent_guides_enable_on_vim_startup = 0
@@ -66,4 +78,16 @@ let g:indent_guides_start_level = 1
 
 " Set Vim Airline Theme
 let g:airline_theme='fruit_punch'
+
+" Changes Nerd Tree arrows (Nerd Font)
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
+" let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
+" let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
+
+" Color full name of the file
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
 
