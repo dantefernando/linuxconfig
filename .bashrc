@@ -94,6 +94,9 @@ alias lx='cd ~/personal/documents/github/linuxconfig'
 # Unix Elitism Flex LOL
 alias genius='curl -L https://git.io/unix && echo'
 
+# Print public ip address to standard output
+alias getip='curl -s https://icanhazip.com'
+
 # opens README.pdf file in the working directory with zathura 
 alias zr='~/.local/bin/openREADME'
 
