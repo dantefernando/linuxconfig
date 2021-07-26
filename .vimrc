@@ -52,4 +52,4 @@ set wildmenu "graphical auto complete menu
 set noswapfile
 
 
-autocmd BufWritePost ~/.suckless/dwmblocks/config.h !cd ~/suckless/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+" autocmd BufWritePost ~/suckless/dwmblocks/config.h !cd ~/suckless/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
