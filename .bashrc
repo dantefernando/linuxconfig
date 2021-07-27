@@ -103,6 +103,8 @@ alias zr='~/.local/bin/openREADME'
 # open tty-clock with 4th color (pink)
 alias tty-clock='tty-clock -C 4'
 
+alias xc='doas nvim /etc/X11/xorg.conf'
+
 # Opens my timetable for school
 # alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
 
