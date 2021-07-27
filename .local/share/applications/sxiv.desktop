@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=sxiv
+Exec=sxiv %f
+TryExec=sxiv
+Terminal=true
