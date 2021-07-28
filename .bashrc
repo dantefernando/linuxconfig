@@ -105,6 +105,10 @@ alias tty-clock='tty-clock -C 4'
 
 alias xc='doas nvim /etc/X11/xorg.conf'
 
+alias win='cd /mnt/windows'
+
+alias t7='cd /run/media/dante/T7'
+
 # Opens my timetable for school
 # alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
 
@@ -122,3 +126,7 @@ export PATH=~/.local/bin/:$PATH
 # PS1 Bash Prompt. Looks like: [dante@archbox ~]$
 PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;56m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\\$\[$(tput sgr0)\] "
 
+
+# PS1 Bash Prompt (same as above but different colors
+# This prompt is on other computers to differentiate between computers when I use ssh
+# PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;124m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;210m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
