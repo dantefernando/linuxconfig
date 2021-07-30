@@ -1,12 +1,32 @@
 #!/bin/sh
 
+################ Info and Settings ##############
+
+# Forked from https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/statusbar/sb-internet
+# IP Address, SSID & qBittorrent portCheck by github.com/dantefernando/
+
 # Show wifi 📶 and percent strength or 📡 if none.
 # Show 🌐 if connected to ethernet or ❎ if none.
 # Show 🔒 if a vpn connection is active
-# Show ✅ if a vpn is connected and the qBittorrent $port is OPEN
+# Show ✅ if a vpn is connected and the qBittorrent $PORT is OPEN
+
+# COMMENT OUT UNDESIRABLE SETTINGS BELOW!!
+
+# if uncommented: showVPNIP will show IP if VPN is active 
+showVPNIP=1
+
+# if uncommented: showMyIPAddress will show IP if VPN is NOT active 
+# showMyIPAddress=1
+
+# if uncommented: showSSID will show SSD 
+# showSSID=1
 
 # !! SET THIS to the port used by qBittorrent !!
 PORT=60134
+
+
+################## END ##########################
+
 
 # case $BLOCK_BUTTON in
 # 	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
@@ -20,9 +40,24 @@ PORT=60134
 # 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 # esac
 
+
+# Get IP Address
+getIP () {
+
+	if [[ -n $showVPNIP && -n $vpn ]]; then
+		 # Show with VPN
+		 address=$(curl -s https://icanhazip.com)
+	elif [[ -n $showMyIPAddress && -z $vpn ]]; then
+		 # Show without VPN
+		 address=$(curl -s https://icanhazip.com)
+	fi
+
+}
+
+
 # Perform a portcheck to see qBittorrent's port is open
 portCheck() {
-	curl -s https://am.i.mullvad.net/port/$PORT | grep "true" >> /dev/null && local portStatus="✅" || local portStatus="❌"
+	curl -s https://am.i.mullvad.net/port/$PORT | grep "true" > /dev/null && local portStatus="✅" || local portStatus="❌"
 	echo $portStatus
 }
 
@@ -36,10 +71,11 @@ getNetInfo() {
 	esac
 
 	# Get wifi network name
-	network=$(nmcli | awk '/connected to/{print a $4}')
+	[[ -n $showSSID ]] && network=$(nmcli | awk '/connected to/{print a $4}')
 
 	# If VPN is active, set vpn var to lock emoji
 	vpn=$(sed "s/.*/🔒/" /sys/class/net/tun*/operstate 2>/dev/null)
+
 }
 
 
@@ -47,10 +83,13 @@ main () {
 	getNetInfo
 
 	# if VPN is active and qbittorrent application is running then check if the port is open
-	[[ -n $vpn ]] && [[ -n $(pgrep qbittorrent) ]] && portStatus=$(portCheck)
+	[[ -n $PORT ]] && [[ -n $vpn ]] && [[ -n $(pgrep qbittorrent) ]] && portStatus=$(portCheck)
+
+	# If any of the $showMyIPAddress related settings are uncommented, it will fetch the IP addresse.
+	[[ -n $showMyIPAddress || -n $showVPNIP ]] && getIP
 
 
-	printf "%s %s%s%s%s\n" "$network" "$wifiicon" "$(sed "s/down/🔴/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" $vpn $portStatus
+	printf "%s %s%s%s%s %s\n" "$network" "$wifiicon" "$(sed "s/down/🔴/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" "$vpn" "$portStatus" "$address"
 }
 
 main

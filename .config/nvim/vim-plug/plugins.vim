@@ -25,5 +25,6 @@ Plug 'ervandew/supertab'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
 
 call plug#end()
