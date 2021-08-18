@@ -1,13 +1,14 @@
 [Default Applications]
 image/png=userapp-sxiv-8A8S00.desktop
 text/plain=nvim.desktop
-image/jpeg=userapp-sxiv-8A8S00.desktop
+image/jpeg=sxiv.desktop
 video/quicktime=mpv.desktop
+x-scheme-handler/msteams=teams.desktop
 
 [Added Associations]
 image/png=userapp-sxiv-7K60Z0.desktop;
 text/plain=nvim.desktop;
-image/jpeg=userapp-sxiv-7K60Z0.desktop;
+image/jpeg=GNU Image Manipulation Program.desktop;gimp.desktop;sxiv.desktop;userapp-sxiv-7K60Z0.desktop;userapp-sxiv-HWUD70.desktop;
 video/mp4=mpv.desktop;
 video/mov=mpv.desktop;
 video/mkv=mpv.desktop;

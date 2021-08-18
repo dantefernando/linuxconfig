@@ -3,7 +3,7 @@
 
 
 # Wallpaper
-(feh --bg-scale ~/personal/pictures/wallpapers/retroSunset.jpg) &
+(feh --bg-scale ~/personal/pictures/wallpapers/retrosunset.jpg) &
 
 
 # Key Repeat Rate
@@ -20,7 +20,7 @@
 
 
 # Hides mouse after 3 seconds
-unclutter --timeout 10 &
+(unclutter --timeout 10) &
 
 
 # Exec dwm

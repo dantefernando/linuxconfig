@@ -5,6 +5,8 @@
 # Change this to your folder where screenshots will be stored
 screenshotsFolder=~/personal/pictures/screenshots
 
+# Create Screenshot Folder if it doesn't already exist
+[ -d $screenshotsFolder ] || mkdir -p $screenshotsFolder
 
 # 1. Scrot snip the whole screen
 # 2. Gets the most recent file in the directory

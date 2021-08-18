@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+ls -t | head --lines $1 | sed 's/ /\\ /g' | xargs qbittorrent-nox

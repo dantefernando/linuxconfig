@@ -22,7 +22,7 @@ showVPNIP=1
 # showSSID=1
 
 # !! SET THIS to the port used by qBittorrent !!
-PORT=60134
+PORT=55708
 
 
 ################## END ##########################

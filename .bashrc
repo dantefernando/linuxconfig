@@ -4,19 +4,19 @@
 # HISTFILESIZE=10000000
 
 # "Infinite" bash history file size 
-HISTSIZE= HISTFILESIZE=
+HISTSIZE= HISTFILESIZE= 
 
 
 # enable color support of ls and also add aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -h --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+# if [ -x /usr/bin/dircolors ]; then
+#     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+alias ls='ls -h --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-fi
+# fi
 
 
 
@@ -45,20 +45,35 @@ alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $
 
 # suckless -----------
 
-alias sck='cd ~/programs/suckless'
-alias sckdwm='cd ~/programs/suckless/dwmNoTitle'
-alias sckdwmc='cd ~/programs/suckless/dwmNoTitle && con'
+# alias sck='cd ~/programs/suckless'
+# alias sckdwm='cd ~/programs/suckless/dwmNoTitle'
+# alias sckdwmc='cd ~/programs/suckless/dwmNoTitle && con'
 
-alias sckst='cd ~/programs/suckless/st'
-alias sckstc='cd ~/programs/suckless/st && con'
+# alias sckst='cd ~/programs/suckless/st'
+# alias sckstc='cd ~/programs/suckless/st && con'
 
-alias sckdmenu='cd ~/programs/suckless/dmenu'
-alias sckdmenuc='cd ~/programs/suckless/dmenu && con'
+# alias sckdmenu='cd ~/programs/suckless/dmenu'
+# alias sckdmenuc='cd ~/programs/suckless/dmenu && con'
 
-alias sckdwmb='cd ~/programs/suckless/dwmblocks'
-alias sckdwmbc='cd ~/programs/suckless/dwmblocks && con'
+# alias sckdwmb='cd ~/programs/suckless/dwmblocks'
+# alias sckdwmbc='cd ~/programs/suckless/dwmblocks && con'
 
-alias dwmbs="cd ~/.local/bin/statusbar && ll | grep -i sb-"
+
+alias fs='cd ~/programs/suckless'
+alias fdwm='cd ~/programs/suckless/dwmNoTitle'
+alias cdwm='cd ~/programs/suckless/dwmNoTitle && con'
+
+alias fst='cd ~/programs/suckless/st'
+alias cst='cd ~/programs/suckless/st && con'
+
+alias fdmenu='cd ~/programs/suckless/dmenu'
+alias cdmenu='cd ~/programs/suckless/dmenu && con'
+
+alias fdwmb='cd ~/programs/suckless/dwmblocks'
+alias cdwmb='cd ~/programs/suckless/dwmblocks && con'
+
+
+alias fsb="cd ~/.local/bin/statusbar && ll"
 
 # ---------------------
 
@@ -97,6 +112,13 @@ alias genius='curl -L https://git.io/unix && echo'
 # Print public ip address to standard output
 alias getip='curl -s https://icanhazip.com'
 
+getLocalIP() {
+    ip a | awk '/192.168/ {print $2}'
+}
+
+# Print local ip address to stdout
+alias getlip="getLocalIP"
+
 # opens README.pdf file in the working directory with zathura 
 alias zr='~/.local/bin/openREADME'
 
@@ -104,6 +126,11 @@ alias zr='~/.local/bin/openREADME'
 alias tty-clock='tty-clock -C 4'
 
 alias xc='doas nvim /etc/X11/xorg.conf'
+
+alias kb='xset r rate 200 100'
+
+# alias cq='curl -s https://am.i.mullvad.net/port/60134 && echo'
+alias cq='curl -s https://am.i.mullvad.net/port/55708 && echo'
 
 alias win='cd /mnt/windows'
 

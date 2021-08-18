@@ -22,9 +22,14 @@ ext="${file##*.}"
 cd "$dir" || exit 1
 
 case "$ext" in
-    md) pandoc -t ms --highlight-style=kate -s -o "$base".pdf "$file" ;;
-    py) st -e python "$file" ;;
-    h) doas make clean install ;;
-    cpp) gcc "$base".cpp -lstdc++ -o "$base" ;;
+    md) pandoc -t ms --highlight-style=kate -s -o "$base".pdf "$file" && exit 0 ;;
+    py) st -e python "$file" && exit 0 ;;
+    h) doas make clean install && exit 0 ;;
+    cpp) gcc "$base".cpp -lstdc++ -o "$base" && exit 0 ;;
 esac
+
+case "$file" in
+    /home/dante/.config/touchcursor/touchcursor.conf) systemctl --user restart touchcursor.service ; xset r rate 200 100 ; exit 0 ;;
+esac
+
 

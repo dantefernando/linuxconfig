@@ -2,7 +2,7 @@
 
 # Stores the file temporarily in the temp folder
 # This folder is a default folder in linux. Doesn't need to be created by the user
-folder=$"/tmp"
+folder="/tmp"
 
 # 1. Takes a rectangular snip selected by the user and stores it in tmp
 # 2. Takes the name of the most recent file with screenshot in the file name
