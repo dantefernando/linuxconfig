@@ -1,15 +1,11 @@
 #!/bin/sh
 
-# Prints Spotify song title and artist to standard output for the dwmblocks statusbar
-# Dependencies: Spotify and playerctl
-
-
 # Returns the spotify song title and artist from playerctl
 getTrack () {
 
-	title=$(playerctl --player spotify metadata title)
-	artist=$(playerctl --player spotify metadata artist)
-	status=$(playerctl --player spotify status)
+	title=$(playerctl --player $player metadata title)
+	artist=$(playerctl --player $player metadata artist)
+	status=$(playerctl --player $player status)
 
 	if [ $? == 0 ] ; then
 
@@ -19,7 +15,7 @@ getTrack () {
 		esac
 
 	# [[ $title != "Advertisement" ]] && echo "$icon  $artist - $title "
-		[[ -z $(playerctl --player spotify metadata | grep spotify:ad) ]] && echo "$icon  $artist - $title "
+		[[ -z $(playerctl --player $player metadata | grep spotify:ad) ]] && echo "$icon  $artist - $title "
 	fi
 
 }
@@ -27,8 +23,13 @@ getTrack () {
 # If spotify is running, call getTrack function
 getSpotify () {
 
-	spotifyID=$(pgrep spotify)
-	[[ -n $spotifyID ]] && echo $(getTrack)
+	if [[ -n $(pgrep brave) ]] ; then  # Brave is running spotify
+		player=$(playerctl -l | grep chromium)
+		echo $(getTrack)
+	elif [[ -n $(pgrep spotify) ]] ; then  # Spotify is running
+		player="spotify"
+		echo $(getTrack)
+	fi
 
 }
 
