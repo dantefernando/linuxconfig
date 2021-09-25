@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Open spotify in brave
+
+brave open.spotify.com

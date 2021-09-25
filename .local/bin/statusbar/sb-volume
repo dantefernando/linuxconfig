@@ -25,4 +25,8 @@ else
 	icon="🔉"
 fi
 
-echo "$icon$vol%"
+# Get bluetooth status
+bluetooth="$(bluetoothctl info | awk '/Connected/ {print $2}')"
+[ $bluetooth == "yes" ] && bticon="🔷"
+
+echo "$bticon$icon$vol%"

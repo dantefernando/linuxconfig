@@ -11,7 +11,7 @@ getTrack () {
 
 		case $status in
 				"Playing") icon="🎵" ;;
-				"Paused") icon="⏸️" ;;
+				"Paused") icon="" ;;
 		esac
 
 	# [[ $title != "Advertisement" ]] && echo "$icon  $artist - $title "

@@ -7,7 +7,7 @@
 # after the user closes zathura, then delete the README.pdf file.
 
 if [[ -e README.pdf ]] ; then
-		zathura README.pdf && rm README.pdf
+		zathura README.pdf && rm README.pdf && echo "README.pdf has been deleted."
 else
 		echo "There is no README.pdf file to read, try again."
 fi
