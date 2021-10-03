@@ -15,7 +15,8 @@ getTrack () {
 		esac
 
 	# [[ $title != "Advertisement" ]] && echo "$icon  $artist - $title "
-		[[ -z $(playerctl --player $player metadata | grep spotify:ad) ]] && echo "$icon  $artist - $title "
+		# [[ -z $(playerctl --player $player metadata | grep spotify:ad) ]] && echo "$icon  $artist - $title "
+		[[ -z $(playerctl --player $player metadata | grep spotify:ad) ]] && echo "$icon  $title - $artist"
 	fi
 
 }
