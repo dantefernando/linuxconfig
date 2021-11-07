@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Opens my most used programs when script is called
+
+st & firefox & discord & spotifyb
