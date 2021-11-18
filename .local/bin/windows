@@ -1,5 +1,32 @@
 #!/bin/sh
 
-# Opens my most used programs when script is called
+# Written by Dante Fernando
 
-st & firefox & discord & spotifyb
+# Opens programs defined here when script is called
+
+programs=('st' 'firefox' 'discord')
+
+# Put scripts here with different names to the respective programs that they open 
+declare -A scripts
+
+# Assign more scripts to the dict here:
+# Ex: scripts[script]="applicationItOpens"
+#       script  | application
+scripts[spotifyb]="brave"
+
+#############################################
+
+# Iterates through array of programs to open,
+# If the program isn't running, start it
+for program in "${programs[@]}"; do
+	[[ -z $(pgrep $program) ]] && ($program &)
+done
+
+# Iterates through scripts dictionary
+# Gets key (script) and application (value)
+# If the program isn't running, start it
+for script in "${!scripts[@]}"; do
+	application=${scripts[$script]}
+	[[ -z $(pgrep $application) ]] && ($script &)
+done
+
