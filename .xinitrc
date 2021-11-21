@@ -3,7 +3,7 @@
 
 
 # Wallpaper
-(feh --bg-scale ~/personal/pictures/wallpapers/retrosunset.jpg) &
+(feh --bg-scale ~/personal/pictures/wallpapers/retroSunset.jpg) &
 
 
 # Key Repeat Rate
@@ -21,6 +21,9 @@
 
 # Hides mouse after 3 seconds
 (unclutter --timeout 10) &
+
+# Compositor for blurring and transparency for st
+(picom --experimental-backends) &
 
 
 # Exec dwm

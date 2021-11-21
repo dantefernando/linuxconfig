@@ -1,17 +1,36 @@
 [Default Applications]
 image/png=userapp-sxiv-8A8S00.desktop
 text/plain=nvim.desktop
-image/jpeg=sxiv.desktop
+image/jpeg=userapp-sxiv-8A8S00.desktop
 video/quicktime=mpv.desktop
-x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/chrome=firefox.desktop
+text/html=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
 
 [Added Associations]
 image/png=userapp-sxiv-7K60Z0.desktop;
 text/plain=nvim.desktop;
-image/jpeg=GNU Image Manipulation Program.desktop;gimp.desktop;sxiv.desktop;userapp-sxiv-7K60Z0.desktop;userapp-sxiv-HWUD70.desktop;
+image/jpeg=userapp-sxiv-7K60Z0.desktop;
 video/mp4=mpv.desktop;
 video/mov=mpv.desktop;
 video/mkv=mpv.desktop;
 video/quicktime=mpv.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+text/html=firefox.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;
 
 [Removed Associations]

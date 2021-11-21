@@ -1,4 +1,22 @@
 
+call plug#begin('~/.vim/plugged')
+Plug 'ap/vim-css-color'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'tpope/vim-commentary'
+Plug 'ervandew/supertab'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'thinca/vim-fontzoom'
+call plug#end()
+
 set relativenumber
 set number
 :set tabstop=4
@@ -34,4 +52,4 @@ set wildmenu "graphical auto complete menu
 set noswapfile
 
 
-autocmd BufWritePost ~/.suckless/dwmblocks/config.h !cd ~/suckless/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+" autocmd BufWritePost ~/suckless/dwmblocks/config.h !cd ~/suckless/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }

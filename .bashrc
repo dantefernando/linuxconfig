@@ -77,25 +77,26 @@ alias fsb="cd ~/.local/bin/statusbar && ll"
 
 # ---------------------
 
-# cd Personal
-alias ps='cd ~/personal/'
+############ FOLDERS ###############
 
-# cd ~/Personal/github
-alias gh='cd ~/personal/documents/github'
-
-# cd's to hdd
-alias hdd='cd /mnt/hdd'
-
-# Go to fonts folder
+alias fps='cd ~/personal/'
+alias fgh='cd ~/personal/documents/github'
+alias fd='cd ~/personal/documents'
+alias fwin='cd /mnt/hdd'
 alias fonts='cd /usr/share/fonts && ls -lsah'
+alias fp='cd ~/personal/pictures'
+alias fv='cd ~/personal/videos/'
 
-# Go to screenshots folder
+alias ps='cd ~/personal/'
+alias gh='cd ~/personal/documents/github'
+alias hdd='cd /mnt/hdd'
+alias fonts='cd /usr/share/fonts && ls -lsah'
 alias pics='cd ~/personal/pictures'
-
 alias vids='cd ~/personal/videos/'
-
-# Go to screenshots folder and open pcmanfm
 alias picsfm='cd ~/personal/pictures/screenshots && pcmanfm'
+
+
+############ Utils ###############
 
 # edits the config files with root permissions for suckless utils
 alias con='nvim config.h'
@@ -136,6 +137,8 @@ alias win='cd /mnt/windows'
 
 alias t7='cd /run/media/dante/T7'
 
+alias z='zathura'
+
 # Opens my timetable for school
 # alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
 
@@ -143,6 +146,8 @@ alias t7='cd /run/media/dante/T7'
 
 # alias mcserver='cd ~/downloads/Minecraft/ && ~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
 alias mcserver='~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
+
+alias sshsp='ssh -p 13372 dante@192.168.178.178'
 
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH

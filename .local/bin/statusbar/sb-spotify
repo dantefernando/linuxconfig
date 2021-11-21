@@ -25,7 +25,9 @@ getTrack () {
 getSpotify () {
 
 	if [[ -n $(pgrep brave) ]] ; then  # Brave is running spotify
-		player=$(playerctl -l | grep chromium)
+		# player=$(playerctl -l | grep chromium)
+		braveid=$(pgrep brave | head -n 1)
+		player="chromium.instance$braveid"
 		echo $(getTrack)
 	elif [[ -n $(pgrep spotify) ]] ; then  # Spotify is running
 		player="spotify"
@@ -35,3 +37,4 @@ getSpotify () {
 }
 
 getSpotify
+

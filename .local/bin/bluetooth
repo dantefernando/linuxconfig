@@ -10,11 +10,13 @@ speaker() {  # Connects or disconnects to the bluetooth speaker
 		c | connect) 
 			echo -e "power on\nconnect $SPEAKER \nquit" | bluetoothctl
 			echo Speaker connected.
+			pkill -RTMIN+10 dwmblocks
 			;;
 
 		d | disconnect) 
 			echo -e "disconnect $SPEAKER\npower off\n\nquit" | bluetoothctl
 			echo Speaker disconnected.
+			pkill -RTMIN+10 dwmblocks
 			;;
 
 		*) echo "Error: Not a valid option!" && exit 1 ;;
