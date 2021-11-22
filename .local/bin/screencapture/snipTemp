@@ -9,5 +9,5 @@ folder="/tmp"
 # 3. Copies the file to the xclipboard for pasting (only one paste use)
 # 4. Deletes the file after
 
-scrot -sf $folder/SCREENSHOT.png && file=$(ls -Art $folder/ | grep SCREENSHOT | tail -n 1) && xclip -loops 1 -selection clipboard -t image/png $folder/$file && rm $folder/$file
+scrot -fs $folder/SCREENSHOT.png && file=$(ls -Art $folder/ | grep SCREENSHOT | tail -n 1) && xclip -loops 1 -selection clipboard -t image/png $folder/$file && rm $folder/$file
 

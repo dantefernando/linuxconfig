@@ -19,5 +19,5 @@ snipsFolder=~/personal/pictures/snips/
 # scrot -s $snipsFolder/%d-%b-%Y.png && file=$(ls -Art $snipsFolder | tail -n 1) && xclip -loops 1 -selection clipboard -t image/png $snipsFolder/$file
 
 # UNCOMMENT FOR SAVING WITHOUT CLIPBOARD
-scrot -sf $snipsFolder/%d-%b-%Y.png 
+scrot -fs $snipsFolder/%d-%b-%Y.png 
 
