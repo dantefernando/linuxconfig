@@ -5,7 +5,8 @@
 # change the wallpaper every 5 minutes
 seconds=300
 
-while true
+# While X is running
+while [ -n $(pgrep X) ]
 do
 
 	feh --bg-scale --randomize ~/personal/pictures/wallpapers/pink/*
