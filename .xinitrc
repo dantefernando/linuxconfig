@@ -3,7 +3,9 @@
 
 
 # Wallpaper
-(feh --bg-scale ~/personal/pictures/wallpapers/retroSunset.jpg) &
+# (feh --bg-scale ~/personal/pictures/wallpapers/retroSunset.jpg) &
+# Script that changes the wallpaper every x minutes
+randomWall &
 
 
 # Key Repeat Rate

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Choose and set a random wallpaper using feh every x minutes
+
+# change the wallpaper every 5 minutes
+seconds=300
+
+while true
+do
+
+	feh --bg-scale --randomize ~/personal/pictures/wallpapers/pink/*
+	sleep $seconds
+
+done
