@@ -1,3 +1,38 @@
 #!/bin/sh
 
-tmux new -s qbt -d 'qbittorrent-nox' \;
+# Start qbittorrent-nox depending on whether or not the proper drive has been
+# mounted properly and/or plugged in.
+
+
+# qBittorrent-nox is not running already
+if [[ -z $(pgrep qbittorrent-nox) ]]; then
+
+		# Drive is mounted correctly
+		if [[ $(lsblk --fs | awk '/2E12-F68D/ {print $8}') == "/run/media/dante/T7" ]]; then
+				echo "=> External drive found."
+				echo "=> Already mounted."
+				echo "=> Starting tmux session..."
+				tmux new -s qbt -d 'qbittorrent-nox' \;
+				echo "=> tmux session started."
+				tmux ls
+
+		# Not plugged in
+		elif [[ -z $(lsblk --fs | grep 2E12-F68D ) ]]; then
+				echo "=> External drive not plugged in. Try again..."
+
+		# Plugged in but not mounted anywhere
+		elif [[ -z $(lsblk --fs | awk '/2E12-F68D/ {print $8}') ]]; then
+				echo "=> External drive found."
+				echo "=> Drive not mounted, mounting..."
+				udisksctl mount -b /dev/sda1 && echo "Mounted." 
+				echo "=> Starting tmux session..."
+				tmux new -s qbt -d 'qbittorrent-nox' \;
+				echo "=> tmux session started."
+				tmux ls
+
+		fi
+
+else
+	echo "qbittorrent-nox is already running."
+
+fi
