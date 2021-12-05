@@ -123,6 +123,8 @@ alias getlip="getLocalIP"
 # opens README.pdf file in the working directory with zathura 
 alias zr='~/.local/bin/openREADME'
 
+alias r='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
+
 # open tty-clock with 4th color (pink)
 alias tty-clock='tty-clock -C 4'
 
