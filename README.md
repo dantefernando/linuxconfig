@@ -47,5 +47,5 @@ Dot files for my **Arch Linux System**, Neovim/Vim and Bash as well as other app
 
 ## Wallpapers
 - Wallpapers that I use are in the `./personal/pictures/wallpapers/` directory.
-- **I DO NOT OWN AND TAKE CREDIT ANY OF THESE WALLPAPERS!**
+- **I DO NOT OWN OR TAKE CREDIT ANY OF THESE WALLPAPERS!**
 - I just store them here for my personal use.
