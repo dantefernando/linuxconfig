@@ -27,6 +27,8 @@ randomWall &
 # Compositor for blurring and transparency for st
 (picom --experimental-backends) &
 
+# Reverse scrolling on my laptop touchpad
+(xinput set-button-map 9 1 2 3 5 4 6 7 8 9 10 11 12) &
 
 # Exec dwm
 (exec dwm)
