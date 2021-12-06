@@ -44,3 +44,8 @@ Dot files for my **Arch Linux System**, Neovim/Vim and Bash as well as other app
 - These contain settings files for applications
 	- The `pacmanPackages/` folder is just a folder with files containing the output of `pacman -Qe` and `pacman -Q`
 	- Read linuxconfig/pacmanPackages/README.md for more info
+
+## Wallpapers
+- Wallpapers that I use are in the `./personal/pictures/wallpapers/` directory.
+- **I DO NOT OWN AND TAKE CREDIT ANY OF THESE WALLPAPERS!**
+- I just store them here for my personal use.
