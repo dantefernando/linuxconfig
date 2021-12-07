@@ -3,36 +3,59 @@
 # Start qbittorrent-nox depending on whether or not the proper drive has been
 # mounted properly and/or plugged in.
 
+# Color codes
+Black='\033[0;30m'
+Red='\033[0;31m'
+Green='\033[0;32m'
+Blue='\033[0;34m'
+Purple='\033[0;35m'
+Cyan='\033[0;36m'
+LightGray='\033[0;37m'
+DarkGray='\033[1;30m'
+LightRed='\033[1;31m'
+LightGreen='\033[1;32m'
+Yellow='\033[1;33m'
+LightBlue='\033[1;34m'
+LightPurple='\033[1;35m'
+LightCyan='\033[1;36m'
+White='\033[1;37m'
+NC='\033[0m' # No Color
+BOLD=$(tput bold)
+NORM=$(tput sgr0)
+
+
+
 
 # qBittorrent-nox is not running already
 if [[ -z $(pgrep qbittorrent-nox) ]]; then
 
 		# Drive is mounted correctly
 		if [[ $(lsblk --fs | awk '/2E12-F68D/ {print $8}') == "/run/media/dante/T7" ]]; then
-				echo "=> External drive found."
-				echo "=> Already mounted."
-				echo "=> Starting tmux session..."
+				echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
+				echo -e "${Cyan}=> ${White}Already mounted.${NC}"
+				echo -e "${Cyan}=> ${White}Starting ${Yellow}tmux session${White}...${NC}"
 				tmux new -s qbt -d 'qbittorrent-nox' \;
-				echo "=> tmux session started."
-				tmux ls
+				echo -e "${Cyan}=> ${Yellow}tmux session ${White}started.${NC}"
+				echo -e "${White}$(tmux ls)${NC}"
 
 		# Not plugged in
 		elif [[ -z $(lsblk --fs | grep 2E12-F68D ) ]]; then
-				echo "=> External drive not plugged in. Try again..."
+				echo -e "${Cyan}=> ${White}External drive ${Red}not plugged in.${White} Try again...${NC}"
 
 		# Plugged in but not mounted anywhere
 		elif [[ -z $(lsblk --fs | awk '/2E12-F68D/ {print $8}') ]]; then
-				echo "=> External drive found."
-				echo "=> Drive not mounted, mounting..."
-				udisksctl mount -b /dev/sda1 && echo "Mounted." 
-				echo "=> Starting tmux session..."
+				echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
+				echo -e "${Cyan}=> ${White}Drive ${Orange}not mounted${White}, ${Green}mounting${White}...${NC}"
+				udisksctl mount -b /dev/sda1 && echo -e "${Cyan}=> ${LightGreen}Mounted${White}.${NC}" 
+				echo -e "${Cyan}=> ${White}Starting ${Yellow}tmux session${White}...${NC}"
 				tmux new -s qbt -d 'qbittorrent-nox' \;
-				echo "=> tmux session started."
-				tmux ls
+				echo -e "${Cyan}=> ${Yellow}tmux session ${White}started.${NC}"
+				echo -e "${White}$(tmux ls)${NC}"
 
 		fi
 
 else
-	echo "qbittorrent-nox is already running."
+	echo -e "${BOLD}${White}qbittorrent-nox is ${Green}already running${White}.${NC}${NORM}"
+	echo -e "${Cyan}=> ${White}Exiting...${NC}"
 
 fi
