@@ -6,7 +6,7 @@
 seconds=300
 
 # While X is running
-while [ -n $(pgrep X) ]
+while [[ -n $(pgrep X) ]]
 do
 
 	feh --bg-scale --randomize ~/personal/pictures/wallpapers/pink/*
