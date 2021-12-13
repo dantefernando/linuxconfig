@@ -33,7 +33,7 @@ bluez-libs 5.62-1
 bluez-utils 5.62-1
 boost-libs 1.76.0-1
 box2d 2.4.1-1
-brave-bin 1:1.32.106-1
+brave-bin 1:1.32.115-1
 brotli 1.0.9-4
 btrfs-progs 5.15-1
 bubblewrap 0.5.0-1
@@ -841,6 +841,7 @@ zathura-pdf-poppler 0.3.0-1
 zenity 3.41.0-1
 zeromq 4.3.4-2
 zimg 3.0.3-1
+zip 3.0-9
 zita-alsa-pcmi 0.3.2-3
 zita-resampler 1.8.0-1
 zlib 1:1.2.11-4

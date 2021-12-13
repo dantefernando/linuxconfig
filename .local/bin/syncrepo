@@ -23,6 +23,8 @@ files=(
 
 		~/.config/Xresources/
 
+		~/.config/picom.conf
+
 		~/.config/touchcursor/touchcursor.conf
 
 		~/.local/bin

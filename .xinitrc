@@ -27,10 +27,6 @@
 # Compositor for blurring and transparency for st
 (picom --experimental-backends) &
 
-# Reverse scrolling on my laptop touchpad
-# Read Guide First: https://n00bsys0p.wordpress.com/2011/07/26/reverse-xorg-scrolling-in-linux-natural-scrolling/
-# (xinput set-button-map 9 1 2 3 5 4 6 7 8 9 10 11 12) &
-
 
 # Exec dwm
 (exec dwm)
