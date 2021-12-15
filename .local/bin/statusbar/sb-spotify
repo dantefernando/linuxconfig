@@ -16,7 +16,7 @@ getTrack () {
 
 	# [[ $title != "Advertisement" ]] && echo "$icon  $artist - $title "
 		# [[ -z $(playerctl --player $player metadata | grep spotify:ad) ]] && echo "$icon  $artist - $title "
-		[[ -z $(playerctl --player $player metadata | grep spotify:ad) ]] && echo "$icon  $title - $artist"
+		[[ -z $(playerctl --player $player metadata | grep spotify:ad) ]] && echo "$icon  $title - $artist "
 	fi
 
 }
@@ -25,9 +25,7 @@ getTrack () {
 getSpotify () {
 
 	if [[ -n $(pgrep brave) ]] ; then  # Brave is running spotify
-		# player=$(playerctl -l | grep chromium)
-		braveid=$(pgrep brave | head -n 1)
-		player="chromium.instance$braveid"
+		player=$(playerctl -l | grep chromium)
 		echo $(getTrack)
 	elif [[ -n $(pgrep spotify) ]] ; then  # Spotify is running
 		player="spotify"
@@ -37,4 +35,3 @@ getSpotify () {
 }
 
 getSpotify
-

@@ -23,7 +23,7 @@ cd "$dir" || exit 1
 
 case "$ext" in
     md) pandoc -t ms --highlight-style=kate -s -o "$base".pdf "$file" && exit 0 ;;
-    py) st -e python "$file" && exit 0 ;;
+    py) st -e python "$file" exit 0 ;;
     h) doas make clean install && exit 0 ;;
     cpp) gcc "$base".cpp -lstdc++ -o "$base" && exit 0 ;;
 esac

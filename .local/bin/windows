@@ -4,18 +4,15 @@
 
 # Opens programs defined here when script is called
 
-programs=('st' 'firefox' )
+programs=('st' 'firefox' 'discord')
 
 # Put scripts here with different names to the respective programs that they open 
 declare -A scripts
 
 # Assign more scripts to the dict here:
 # Ex: scripts[script]="applicationItOpens"
-# 'application' is what is used to search
-# to see if the program is already running.
-#       script| application
+#       script  | application
 scripts[spotifyb]="brave"
-scripts[discord]="Discord"
 
 #############################################
 

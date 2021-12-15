@@ -22,7 +22,7 @@ showVPNIP=1
 # showSSID=1
 
 # !! SET THIS to the port used by qBittorrent !!
-PORT=55708
+PORT=60602
 
 
 ################## END ##########################
@@ -76,6 +76,15 @@ getNetInfo() {
 	# If VPN is active, set vpn var to lock emoji
 	vpn=$(sed "s/.*/🔒/" /sys/class/net/tun*/operstate 2>/dev/null)
 
+	# Get Mullvad VPN's Status
+	mullvadStatus=$(mullvad status | awk '{print $3}')
+
+	case $mullvadStatus in
+		Connected) mullvad="☑️" ;;
+		Connecting) mullvad="⏳" ;;
+		Disconnected) mullvad="❎" ;;
+	esac
+
 }
 
 
@@ -89,7 +98,7 @@ main () {
 	[[ -n $showMyIPAddress || -n $showVPNIP ]] && getIP
 
 
-	printf "%s %s%s%s%s %s\n" "$network" "$wifiicon" "$(sed "s/down/🔴/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" "$vpn" "$portStatus" "$address"
+	printf "%s %s%s%s%s%s %s\n" "$network" "$wifiicon" "$(sed "s/down/🔴/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" "$mullvad" "$vpn" "$portStatus" "$address"
 }
 
 main

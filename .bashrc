@@ -77,26 +77,25 @@ alias fsb="cd ~/.local/bin/statusbar && ll"
 
 # ---------------------
 
-############ FOLDERS ###############
-
-alias fps='cd ~/personal/'
-alias fgh='cd ~/personal/documents/github'
-alias fd='cd ~/personal/documents'
-alias fwin='cd /mnt/hdd'
-alias fonts='cd /usr/share/fonts && ls -lsah'
-alias fp='cd ~/personal/pictures'
-alias fv='cd ~/personal/videos/'
-
+# cd Personal
 alias ps='cd ~/personal/'
+
+# cd ~/Personal/github
 alias gh='cd ~/personal/documents/github'
+
+# cd's to hdd
 alias hdd='cd /mnt/hdd'
+
+# Go to fonts folder
 alias fonts='cd /usr/share/fonts && ls -lsah'
+
+# Go to screenshots folder
 alias pics='cd ~/personal/pictures'
+
 alias vids='cd ~/personal/videos/'
+
+# Go to screenshots folder and open pcmanfm
 alias picsfm='cd ~/personal/pictures/screenshots && pcmanfm'
-
-
-############ Utils ###############
 
 # edits the config files with root permissions for suckless utils
 alias con='nvim config.h'
@@ -131,6 +130,7 @@ alias tty-clock='tty-clock -C 4'
 alias xc='doas nvim /etc/X11/xorg.conf'
 
 alias kb='xset r rate 200 100'
+alias kbt='systemctl --user restart touchcursor && kb'
 
 # alias cq='curl -s https://am.i.mullvad.net/port/60134 && echo'
 alias cq='curl -s https://am.i.mullvad.net/port/55708 && echo'
@@ -139,7 +139,20 @@ alias win='cd /mnt/windows'
 
 alias t7='cd /run/media/dante/T7'
 
-alias z='zathura'
+alias sch='cd ~/personal/documents/github/'
+
+alias csal='cd ~/personal/documents/github/CS-AL/'
+
+alias sx='startx'
+
+startxdisconnect() {
+
+[[ $(mullvad status | awk '{print $3}') == "Disconnected" ]] || mullvad disconnect && startx
+
+}
+
+alias ssx='startxdisconnect'
+alias sshsp='ssh -p 13371 dante@192.168.178.129'
 
 # Opens my timetable for school
 # alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
@@ -149,7 +162,8 @@ alias z='zathura'
 # alias mcserver='cd ~/downloads/Minecraft/ && ~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
 alias mcserver='~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
 
-alias sshsp='ssh -p 13372 dante@192.168.178.129'
+alias sam='udisksctl mount -b /dev/sda1'
+alias dsam='udisksctl unmount -b /dev/sda1 && udisksctl power-off -b /dev/sda'
 
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
@@ -160,10 +174,11 @@ export PATH=~/.local/bin/:$PATH
 # PS1 Bash Prompt. Looks like: [dante@archbox ~]$
 
 # Pink and Blue
-# PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;56m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;14m\]\\$\[$(tput sgr0)\] "
+# PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;56m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\[\033[38;5;9m\]\$\[$(tput sgr0)\] "
 
 # Pink on Pink
-# PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;211m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;205m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;204m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+# PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;211m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;205m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;204m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\[\033[38;5;9m\]\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 # Red on Red
-PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;124m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;210m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;124m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\\[\033[38;5;9m\]\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+

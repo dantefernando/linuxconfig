@@ -2,8 +2,10 @@
 
 # Synchronize all current scripts and config files to my linuxconfig/ repo location.
 
+
 # Set cloned linuxconfig github directory location here
 repoLocation=~/personal/documents/github/linuxconfig
+
 
 # Array of files/folders to copy over 
 # Edit directories/files to be synced to the repoLocation
@@ -23,73 +25,48 @@ files=(
 
 		~/.config/Xresources/
 
-		~/.config/picom.conf
-
-		~/.config/touchcursor/touchcursor.conf
-
 		~/.local/bin
 
 		~/personal/pictures/wallpapers
 	)
 
 
-copyFiles() {
-	# Iterate over each file and copy it to temporary dir
-	# as well as any parent directories
-	for file in ${files[@]}; do
-		cp -rv --parents $file $tempDir
-	done
-
-	# Copies normal files and hidden files
-	# cp -rf $tempDir/home/$USER/* $repoLocation
-	# cp -rf $tempDir/home/$USER/.* $repoLocation
-	cp -rf $tempDir/home/$USER/. $repoLocation
-
-	echo -e "\n\n\n#####################################"
-	echo -e "\nCopied to ${repoLocation}!"
-
-	# Deletes the temporary folder
-	rm -rf $tempDir && echo -e "\nTemp Dir: ${tempDir} DELETED!\n"
-
-	echo -e "#####################################\n\n"
-
-	# If the $repoLocation folder is a initialized as a git repo then run
-	# a git status on the folder
-	if [ -d $repoLocation/.git/ ] ; then
-		cd $repoLocation && git status && echo -e "\n\n"
-	else
-		echo "This is not a git repo"
-	fi
-
-	# cd's back to the prev dir that the user called the script from
-	cd - > /dev/null
-}
+# Make temp dir in /tmp/ to store temporary files
+tempDir=$(mktemp -d)
 
 
-syncPackages() {  # Syncs pacman packages
-	case $choice in
-		y | Y | yes | Yes | YES) 
+# Get user choice
+echo -e "Sync Pacman Packages? [Y/n]" && read -p "Your Choice: " choice
 
-			if [ ! -d $repoLocation/pacmanPackages/ ]; then
-				echo "Making pacmanPackages/ directory" && mkdir $repoLocation/pacmanPackages/ 
-			fi
-
-			echo -e "\nSyncing pacman packages list..." && pacman -Qe > $repoLocation/pacmanPackages/pacmanQe && pacman -Q > $repoLocation/pacmanPackages/pacmanQ && echo -e "\nPacman Packages updated!"
-			;;
-
-		*) echo "Syncing of pacman packages cancelled" ;;
-	esac
-}
+case $choice in
+	y | Y | yes | Yes | YES) echo -e "\nSyncing pacman packages list..." && pacman -Qe > $repoLocation/pacmanPackages/pacmanQe && pacman -Q > $repoLocation/pacmanPackages/pacmanQ && echo -e "\nPacman Packages updated!" ;;
+	*) echo "Syncing of pacman packages cancelled" ;;
+esac
 
 
-main() {
-	# Make temp dir in /tmp/ to store temporary files
-	tempDir=$(mktemp -d)
 
-	# Get user choice to sync pacman packages
-	echo -e "Sync Pacman Packages? [Y/n]" && read -p "Your Choice: " choice && syncPackages
-	copyFiles
-}
+# Iterate over each file and copy it to temporary dir
+# as well as any parent directories
+for file in ${files[@]}; do
+	cp -rv --parents $file $tempDir
+done
 
-# Calls the main function which runs the rest of the scripts
-main
+# Copies normal files and hidden files
+cp -rf $tempDir/home/$USER/* $repoLocation
+cp -rf $tempDir/home/$USER/.* $repoLocation
+
+echo -e "\n\n\n#####################################"
+echo -e "\nCopied to ${repoLocation}!"
+
+# Deletes the temporary folder
+rm -rf $tempDir && echo -e "\nTemp Dir: ${tempDir} DELETED!\n"
+
+echo -e "#####################################\n\n"
+
+# cd's to the repoLocation and gets the git status of any changed files
+cd $repoLocation && git status
+echo -e "\n\n"
+
+
+# cd's back to the prev dir
+cd - > /dev/null
