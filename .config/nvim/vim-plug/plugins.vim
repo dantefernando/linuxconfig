@@ -26,6 +26,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-repeat'
-Plug 'ggandor/lightspeed.nvim'
+" Plug 'ggandor/lightspeed.nvim'
 
 call plug#end()
