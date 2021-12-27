@@ -40,6 +40,7 @@ alias l='ls -CF'
 
 
 # When exiting ranger, the user will be cd'd into the dir that they were in
+alias r='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
 alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
 
 
@@ -122,7 +123,6 @@ alias getlip="getLocalIP"
 # opens README.pdf file in the working directory with zathura 
 alias zr='~/.local/bin/openREADME'
 
-alias r='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
 
 # open tty-clock with 4th color (pink)
 alias tty-clock='tty-clock -C 4'
@@ -144,6 +144,8 @@ alias sch='cd ~/personal/documents/github/'
 alias csal='cd ~/personal/documents/github/CS-AL/'
 
 alias sx='startx'
+
+alias weather='curl wttr.in'
 
 startxdisconnect() {
 
