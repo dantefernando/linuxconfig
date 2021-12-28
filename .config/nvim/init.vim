@@ -35,6 +35,11 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+map <Up> <C-W>+
+map <Down> <C-W>-
+map <Left> <C-W><
+map <Right> <C-W>>
+
 
 au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js
      \ set tabstop=4 |
