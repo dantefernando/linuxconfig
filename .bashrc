@@ -76,6 +76,8 @@ alias cdwmb='cd ~/programs/suckless/dwmblocks && con'
 
 alias fsb="cd ~/.local/bin/statusbar && ll"
 
+alias fd='cd ~/personal/documents/'
+
 # ---------------------
 
 # cd Personal
