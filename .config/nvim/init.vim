@@ -35,10 +35,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-map <Up> <C-W>+
-map <Down> <C-W>-
-map <Left> <C-W><
-map <Right> <C-W>>
+map <Up>    3<C-W>+
+map <Down>  3<C-W>-
+map <Left>  3<C-W><
+map <Right> 3<C-W>>
 
 
 au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js
