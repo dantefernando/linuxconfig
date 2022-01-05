@@ -170,6 +170,10 @@ alias dsam='udisksctl unmount -b /dev/sda1 && udisksctl power-off -b /dev/sda'
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
 export PATH=~/.local/bin/screencapture/:$PATH
+
+# Personal scripts
+export PATH=~/.local/bin/scripts/:$PATH
+
 export PATH=~/.local/bin/:$PATH
 
 
