@@ -161,7 +161,7 @@ export PATH=~/.local/bin/statusbar/:$PATH
 export PATH=~/.local/bin/screencapture/:$PATH
 
 # Personal scripts
-export PATH=~/.local/bin/scripts/:$PATH
+export PATH=~/.local/scripts/:$PATH
 
 export PATH=~/.local/bin/:$PATH
 
