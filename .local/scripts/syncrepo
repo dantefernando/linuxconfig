@@ -27,7 +27,7 @@ files=(
 
 		~/.config/touchcursor/touchcursor.conf
 
-		~/.local/bin
+		~/.local/scripts/
 
 		~/personal/pictures/wallpapers
 	)
