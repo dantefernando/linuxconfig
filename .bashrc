@@ -40,6 +40,7 @@ alias l='ls -CF'
 
 
 # When exiting ranger, the user will be cd'd into the dir that they were in
+alias r='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
 alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
 
 
@@ -75,6 +76,7 @@ alias cdwmb='cd ~/programs/suckless/dwmblocks && con'
 
 alias fsb="cd ~/.local/bin/statusbar && ll"
 
+alias fd='cd ~/personal/documents/'
 # ---------------------
 
 ############ FOLDERS ###############
@@ -94,9 +96,6 @@ alias fonts='cd /usr/share/fonts && ls -lsah'
 alias pics='cd ~/personal/pictures'
 alias vids='cd ~/personal/videos/'
 alias picsfm='cd ~/personal/pictures/screenshots && pcmanfm'
-
-
-############ Utils ###############
 
 # edits the config files with root permissions for suckless utils
 alias con='nvim config.h'
@@ -129,6 +128,7 @@ alias tty-clock='tty-clock -C 4'
 alias xc='doas nvim /etc/X11/xorg.conf'
 
 alias kb='xset r rate 200 100'
+alias kbt='systemctl --user restart touchcursor && kb'
 
 # alias cq='curl -s https://am.i.mullvad.net/port/60134 && echo'
 alias cq='curl -s https://am.i.mullvad.net/port/55708 && echo'
@@ -137,7 +137,14 @@ alias win='cd /mnt/windows'
 
 alias t7='cd /run/media/dante/T7'
 
+alias sch='cd ~/personal/documents/github/'
 alias z='zathura'
+
+alias csal='cd ~/personal/documents/github/CS-AL/'
+
+alias sx='startx'
+
+alias weather='curl wttr.in'
 
 # Opens my timetable for school
 # alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
@@ -152,6 +159,10 @@ alias sshsp='ssh -p 13372 dante@192.168.178.178'
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/bin/statusbar/:$PATH
 export PATH=~/.local/bin/screencapture/:$PATH
+
+# Personal scripts
+export PATH=~/.local/bin/scripts/:$PATH
+
 export PATH=~/.local/bin/:$PATH
 
 
