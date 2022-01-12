@@ -77,27 +77,24 @@ alias cdwmb='cd ~/programs/suckless/dwmblocks && con'
 alias fsb="cd ~/.local/bin/statusbar && ll"
 
 alias fd='cd ~/personal/documents/'
-
 # ---------------------
 
-# cd Personal
-alias ps='cd ~/personal/'
+############ FOLDERS ###############
 
-# cd ~/Personal/github
-alias gh='cd ~/personal/documents/github'
-
-# cd's to hdd
-alias hdd='cd /mnt/hdd'
-
-# Go to fonts folder
+alias fps='cd ~/personal/'
+alias fgh='cd ~/personal/documents/github'
+alias fd='cd ~/personal/documents'
+alias fwin='cd /mnt/hdd'
 alias fonts='cd /usr/share/fonts && ls -lsah'
+alias fp='cd ~/personal/pictures'
+alias fv='cd ~/personal/videos/'
 
-# Go to screenshots folder
+alias ps='cd ~/personal/'
+alias gh='cd ~/personal/documents/github'
+alias hdd='cd /mnt/hdd'
+alias fonts='cd /usr/share/fonts && ls -lsah'
 alias pics='cd ~/personal/pictures'
-
 alias vids='cd ~/personal/videos/'
-
-# Go to screenshots folder and open pcmanfm
 alias picsfm='cd ~/personal/pictures/screenshots && pcmanfm'
 
 # edits the config files with root permissions for suckless utils
@@ -125,7 +122,6 @@ alias getlip="getLocalIP"
 # opens README.pdf file in the working directory with zathura 
 alias zr='~/.local/bin/openREADME'
 
-
 # open tty-clock with 4th color (pink)
 alias tty-clock='tty-clock -C 4'
 
@@ -142,6 +138,7 @@ alias win='cd /mnt/windows'
 alias t7='cd /run/media/dante/T7'
 
 alias sch='cd ~/personal/documents/github/'
+alias z='zathura'
 
 alias csal='cd ~/personal/documents/github/CS-AL/'
 
