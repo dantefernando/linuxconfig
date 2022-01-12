@@ -77,12 +77,14 @@ alias cdwmb='cd ~/programs/suckless/dwmblocks && con'
 alias fsb="cd ~/.local/bin/statusbar && ll"
 
 alias fd='cd ~/personal/documents/'
+
 # ---------------------
 
-############ FOLDERS ###############
+# cd Personal
+alias ps='cd ~/personal/'
 
 alias fps='cd ~/personal/'
-alias fgh='cd ~/personal/documents/github'
+alias gh='cd ~/personal/documents/github'
 alias fd='cd ~/personal/documents'
 alias fwin='cd /mnt/hdd'
 alias fonts='cd /usr/share/fonts && ls -lsah'
@@ -167,11 +169,11 @@ alias sam='udisksctl mount -b /dev/sda1'
 alias dsam='udisksctl unmount -b /dev/sda1 && udisksctl power-off -b /dev/sda'
 
 # Adds statusbar scripts to $PATH 
-export PATH=~/.local/bin/statusbar/:$PATH
-export PATH=~/.local/bin/screencapture/:$PATH
+export PATH=~/.local/scripts/statusbar/:$PATH
+export PATH=~/.local/scripts/screencapture/:$PATH
 
 # Personal scripts
-export PATH=~/.local/bin/scripts/:$PATH
+export PATH=~/.local/scriptsPATH
 
 export PATH=~/.local/bin/:$PATH
 
