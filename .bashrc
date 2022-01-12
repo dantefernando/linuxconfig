@@ -157,8 +157,8 @@ alias mcserver='~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar min
 alias sshsp='ssh -p 13372 dante@192.168.178.178'
 
 # Adds statusbar scripts to $PATH 
-export PATH=~/.local/bin/statusbar/:$PATH
-export PATH=~/.local/bin/screencapture/:$PATH
+export PATH=~/.local/scripts/statusbar/:$PATH
+export PATH=~/.local/scripts/screencapture/:$PATH
 
 # Personal scripts
 export PATH=~/.local/scripts/:$PATH
