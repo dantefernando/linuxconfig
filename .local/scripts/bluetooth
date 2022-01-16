@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Connect/Disconnect the bluetooth speaker
+
+# Set this to the MAC address of your wireless speaker
+SPEAKER="78:44:05:75:78:80"
+
+speaker() {  # Connects or disconnects to the bluetooth speaker
+	case $choice in
+		c | connect) 
+			echo -e "power on\nconnect $SPEAKER \nquit" | bluetoothctl
+			echo Speaker connected.
+			pkill -RTMIN+10 dwmblocks
+			;;
+
+		d | disconnect) 
+			echo -e "disconnect $SPEAKER\npower off\n\nquit" | bluetoothctl
+			echo Speaker disconnected.
+			pkill -RTMIN+10 dwmblocks
+			;;
+
+		*) echo "Error: Not a valid option!" && exit 1 ;;
+	esac
+}
+
+
+main() {
+
+if [[ -z $1 ]]; then # User didn't pass in an argument
+	echo -e "(C)onnect or (D)isconnect from bluetooth speaker?" && read -p "Your Choice: " choice
+else  # User passed in an argument
+	choice=$1
+fi
+
+# Change user input to lowercase and call speaker function
+choice=$(echo "$choice" | awk '{print tolower($0)}') && speaker
+}
+
+main $1
