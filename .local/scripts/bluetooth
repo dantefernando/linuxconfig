@@ -2,20 +2,19 @@
 
 # Connect/Disconnect the bluetooth speaker
 
-# Set this to the MAC address of your wireless speaker
+# Set this to the bluetooth MAC address of your wireless speaker/headphones
 SPEAKER="78:44:05:75:78:80"  # JBL Speaker
 AIRPODS="E8:85:4B:8D:EB:97"  # Airpods
 
 speaker() {  # Connects or disconnects to the bluetooth speaker
+
 	case $choice in
 		c | connect) 
-			echo -e "power on\nconnect $DEVICE \nquit" | bluetoothctl
-			echo Device connected.
+			bluetoothctl -- power on && bluetoothctl -- connect $DEVICE && echo "Device Connected Successfully."
 			;;
 
 		d | disconnect) 
-			echo -e "disconnect $DEVICE\npower off\n\nquit" | bluetoothctl
-			echo Device disconnected.
+			bluetoothctl -- disconnect $DEVICE && bluetoothctl -- power off && echo "Device Disconnected Successfully."
 			;;
 
 		*) echo "Error: Not a valid option!" && exit 1 ;;
@@ -25,26 +24,26 @@ speaker() {  # Connects or disconnects to the bluetooth speaker
 
 main() {
 
-if [[ -z $1 ]]; then # User didn't pass in an argument
-	echo -e "(C)onnect or (D)isconnect from bluetooth speaker?" && read -p "Your Choice: " choice
-else  # User passed in an argument
-	choice=$1
-fi
+	if [[ -z $1 ]]; then # User didn't pass in an argument
+		echo -e "(C)onnect or (D)isconnect from bluetooth speaker?" && read -p "Your Choice: " choice
+	else  # User passed in an argument
+		choice=$1
+	fi
 
 
-if [[ -z $2 ]]; then # User didn't pass in an argument for device
-	DEVICE=$SPEAKER  # Default to speaker
-else  # User passed in an argument for device
+	if [[ -z $2 ]]; then # User didn't pass in an argument for device
+		DEVICE=$SPEAKER  # Default to speaker
+	else  # User passed in an argument for device
 
-	# Change device input to lowercase
-	deviceChoice=$(echo "$2" | awk '{print tolower($0)}')
+		# Change device input to lowercase
+		deviceChoice=$(echo "$2" | awk '{print tolower($0)}')
 
-	[[ $deviceChoice == "air" || $deviceChoice == "airpods" || $deviceChoice == "a" ]] && DEVICE=$AIRPODS
-	[[ $deviceChoice == "speaker" || $deviceChoice == "speaker" || $deviceChoice == "speak" ]] && DEVICE=$AIRPODS
-fi
+		[[ $deviceChoice == "air" || $deviceChoice == "airpods" || $deviceChoice == "a" ]] && DEVICE=$AIRPODS
+		[[ $deviceChoice == "speaker" || $deviceChoice == "speaker" || $deviceChoice == "speak" ]] && DEVICE=$AIRPODS
+	fi
 
-# Change user input to lowercase and call speaker function
-choice=$(echo "$choice" | awk '{print tolower($0)}') && speaker
+	# Change user input to lowercase and call speaker function
+	choice=$(echo "$choice" | awk '{print tolower($0)}') && speaker
 
 }
 
