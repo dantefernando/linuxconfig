@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Connect and Disconnect from my WiFi Network
+
+SSID='Ziggo9232701'
+password='rEFcm4ejefvv'
+
+[[ $1 == "c" ]] && nmcli -t device wifi connect $SSID password $password
+[[ $1 == "d" ]] && nmcli -t device disconnect wlp2s0
+

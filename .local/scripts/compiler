@@ -13,6 +13,7 @@
 # - Can run the python interpreter for .py files in a separate st window
 # - Compiles config.h C header files with "make" for suckless apps e.g. dwm, dmenu, st etc.
 # - Compiles C++ files using gcc
+# - Compiles LaTeX files using pdflatex
 
 file=$(readlink -f "$1")
 dir=${file%/*}
@@ -26,6 +27,7 @@ case "$ext" in
     py) st -e python "$file" && exit 0 ;;
     h) doas make clean install && exit 0 ;;
     cpp) gcc "$base".cpp -lstdc++ -o "$base" && exit 0 ;;
+    tex) pdflatex "$base".tex && exit 0 ;;
 esac
 
 case "$file" in
