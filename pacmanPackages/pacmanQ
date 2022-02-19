@@ -37,10 +37,9 @@ bluez-libs 5.63-1
 bluez-utils 5.63-1
 boost-libs 1.78.0-1
 box2d 2.4.1-1
-brave-bin 1:1.32.115-1
+brave-bin 1:1.35.101-1
 brotli 1.0.9-7
 btrfs-progs 5.16-1
-bubblewrap 0.5.0-1
 bzip2 1.0.8-4
 c-ares 1.18.1-1
 ca-certificates 20210603-1
@@ -69,7 +68,7 @@ dconf 0.40.0-1
 desktop-file-utils 0.26-1
 device-mapper 2.03.14-2
 diffutils 3.8-1
-discord 0.0.16-1
+discord 0.0.17-1
 dkms 3.0.3-1
 dmraid 1.0.0.rc16.3-13
 dnssec-anchors 20190629-3
@@ -83,7 +82,6 @@ egl-wayland 2:1.1.9+r3+g582b2d3-1
 eglexternalplatform 1.1-2
 electron 16.0.8-1
 elfutils 0.186-4
-enchant 2.3.2-1
 ethtool 1:5.16-1
 exfat-utils 1.3.0-2
 exiv2 0.27.5-1
@@ -421,7 +419,6 @@ libldac 2.0.2.3-1
 libldap 2.6.1-1
 libluv 1.43.0_0-1
 libmad 0.15.1b-9
-libmanette 0.2.6-2
 libmatroska 1.6.3-1
 libmd 1.0.4-1
 libmfx 21.3.5-2
@@ -520,7 +517,6 @@ libwacom 2.0.0-2
 libwebp 1.2.2-1
 libwmf 0.2.12-2
 libwpd 0.10.3-3
-libwpe 1.12.0-1
 libwpg 0.3.3-2
 libwps 0.4.12-1
 libx11 1.7.3.1-1
@@ -537,7 +533,7 @@ libxdmcp 1.1.3-3
 libxext 1.3.4-3
 libxfixes 6.0.0-1
 libxfont2 2.0.5-1
-libxft-bgra 2.3.3.r7.7808631e-1
+libxft-bgra 2.3.4-1
 libxi 1.8-1
 libxinerama 1.1.4-3
 libxkbcommon 1.4.0-1
@@ -597,7 +593,6 @@ mpv 1:0.34.1-2
 msgpack-c 4.0.0-1
 mtdev 1.1.6-1
 mujs 1.2.0-2
-multimc-bin 1.6-1
 mypaint-brushes1 1.3.1-1
 ncurses 6.3-1
 ndctl 72.1-1
@@ -631,7 +626,7 @@ opus 1.3.1-2
 orc 0.4.32-1
 os-prober 1.79-1
 p11-kit 0.24.1-1
-p3x-onenote 2021.10.167-1
+p3x-onenote 2022.4.112-1
 pacman 6.0.1-3
 pacman-mirrorlist 20220116-1
 pahole 1.23-1
@@ -942,14 +937,11 @@ vulkan-headers 1:1.3.204-1
 vulkan-icd-loader 1.2.203-1
 wayland 1.20.0-1
 wayland-protocols 1.25-1
-webkit2gtk 2.34.4-1
 webrtc-audio-processing 0.3.1-3
 wget 1.21.2-1
 which 2.21-5
 wireless_tools 30.pre9-3
-woff2 1.0.2-3
 wpa_supplicant 2:2.10-1
-wpebackend-fdo 1.12.0-1
 wxgtk-common 3.0.5.1-3
 wxgtk3 3.0.5.1-3
 x264 3:0.163.r3060.5db6aa6-1
@@ -962,7 +954,6 @@ xcb-util-keysyms 0.4.0-3
 xcb-util-renderutil 0.3.9-3
 xcb-util-wm 0.4.1-3
 xclip 0.13-3
-xdg-dbus-proxy 0.1.2-3
 xdg-utils 1.1.3+19+g9816ebb-1
 xdotool 3.20211022.1-1
 xf86-input-libinput 1.2.1-1
@@ -983,7 +974,6 @@ xorg-xinit 1.4.1-3
 xorg-xkbcomp 1.4.5-1
 xorg-xmodmap 1.0.10-2
 xorg-xprop 1.2.5-1
-xorg-xrandr 1.5.1-2
 xorg-xrdb 1.2.1-1
 xorg-xset 1.2.4-2
 xorg-xwininfo 1.1.5-2
@@ -993,11 +983,10 @@ xsel 1.2.0.20200527-1
 xvidcore 1.3.7-2
 xz 5.2.5-2
 yarn 1.22.17-1
-yay 11.0.2-1
+yay 11.1.1-1
 youtube-dl 2021.12.17-1
 zathura 0.4.8-1
 zathura-pdf-poppler 0.3.0-1
-zenity 3.41.0-1
 zeromq 4.3.4-2
 zimg 3.0.3-1
 zip 3.0-9

@@ -21,6 +21,8 @@ files=(
 
 		~/.config/ranger/rc.conf
 
+		~/.config/pcmanfm/default/pcmanfm.conf
+
 		~/.config/Xresources/
 
 		~/.config/picom.conf

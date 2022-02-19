@@ -89,7 +89,6 @@ alias fonts='cd /usr/share/fonts && ls -lsah'
 alias fp='cd ~/personal/pictures'
 alias fv='cd ~/personal/videos/'
 
-alias ps='cd ~/personal/'
 alias gh='cd ~/personal/documents/github'
 alias hdd='cd /mnt/hdd'
 alias fonts='cd /usr/share/fonts && ls -lsah'
