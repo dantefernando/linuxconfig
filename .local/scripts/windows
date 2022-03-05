@@ -4,7 +4,7 @@
 
 # Opens programs defined here when script is called
 
-programs=('st' 'firefox' 'barrier')
+programs=('st' 'firefox')
 
 # Put scripts here with different names to the respective programs that they open 
 declare -A scripts

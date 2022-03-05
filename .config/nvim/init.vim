@@ -26,6 +26,10 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 
+" LaTeX commands
+
+map <leader>o :! zathura $(echo % \| sed 's/tex$/pdf/') & disown <CR><CR>
+
 " ==========================================================
 
 
