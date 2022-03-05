@@ -26,6 +26,10 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 " nnoremap <C-n> :NERDTree<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 
+" LaTeX commands
+
+map <leader>o :! zathura $(echo % \| sed 's/tex$/pdf/') & disown <CR><CR>
+
 " ==========================================================
 
 
@@ -34,11 +38,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-map <Up>    3<C-W>+
-map <Down>  3<C-W>-
-map <Left>  3<C-W><
-map <Right> 3<C-W>>
 
 
 au BufNewFile,BufRead *.py,*.java,*.cpp,*.c,*.cs,*.rkt,*.h,*.html,*.txt,*.js
