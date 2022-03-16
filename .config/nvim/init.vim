@@ -28,7 +28,11 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 
 " LaTeX commands
 
+" Open LaTeX pdf file
 map <leader>o :! zathura $(echo % \| sed 's/tex$/pdf/') & disown <CR><CR>
+
+" Recompile references using biber
+map <leader>r :! biber $(echo % \| sed 's/.tex//') && pdflatex % <CR><CR>
 
 " ==========================================================
 
