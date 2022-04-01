@@ -76,7 +76,7 @@ getNetInfo() {
 	# If VPN is active, set vpn var to lock emoji
 	vpn=$(sed "s/.*/🔒/" /sys/class/net/tun*/operstate 2>/dev/null)
 
-	[[ $(nmcli d | awk '/ethernet/ {print $4}') == 'Shared' ]] && sharedStatus=🔗
+	[[ $(nmcli d | awk '/ethernet/ {print $4}') == 'Shared' ]] && sharedStatus=" 🔗"
 }
 
 
