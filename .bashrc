@@ -143,7 +143,7 @@ alias csal='cd ~/personal/documents/github/CS-AL/'
 
 alias sx='startx'
 
-alias weather='curl wttr.in'
+alias weather='curl wttr.in/Voorschoten'
 
 # Opens my timetable for school
 # alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
