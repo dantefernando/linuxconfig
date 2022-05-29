@@ -102,6 +102,9 @@ alias con='nvim config.h'
 # Volume mixer for pulseaudio
 alias vol='pulsemixer'
 
+# Cam settings
+alias cam='qv4l2'
+
 # linuxconfig git repo
 alias lx='cd ~/personal/documents/github/linuxconfig'
 
