@@ -1,0 +1,6 @@
+#!/bin/sh
+
+folder='/home/dante/personal/documents/github/CS-AL/notes/'
+currentdate=$(date "+%d_%m_20%y")
+
+cd $folder && mkdir -v $currentdate && cd $currentdate/ && touch note.md
