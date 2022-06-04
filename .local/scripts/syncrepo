@@ -22,6 +22,7 @@ files=(
 		~/.config/nvim/init.vim
 		~/.config/nvim/autoload/plug.vim
 		~/.config/nvim/vim-plug/plugins.vim
+		~/.config/nvim/spell/
 		~/.config/ranger/rc.conf
 		~/.config/pcmanfm/default/pcmanfm.conf
 		~/.config/Xresources/
