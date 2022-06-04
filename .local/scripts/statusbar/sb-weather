@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Show current temperature and wind speed using curl with wttr.in 
+
+# curl wttr.in/:help for more info
+weather=$(curl -s wttr.in/voorschoten?format=1)
+
+echo $weather

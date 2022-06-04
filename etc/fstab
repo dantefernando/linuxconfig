@@ -1,0 +1,17 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda3
+UUID=6de90e2b-9d8a-4a11-9981-5859b828769c	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda4
+UUID=E3E2-59F4      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda5
+UUID=452c6561-0901-40e0-bc77-60fc94773d52	/home     	ext4      	rw,relatime	0 2
+
+# Windows D Partition
+UUID=748C48688C482748 /mnt/windows/d ntfs-3g uid=1000,gid=998 0 0
+
+

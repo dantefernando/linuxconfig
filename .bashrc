@@ -102,6 +102,9 @@ alias con='nvim config.h'
 # Volume mixer for pulseaudio
 alias vol='pulsemixer'
 
+# Cam settings
+alias cam='qv4l2'
+
 # linuxconfig git repo
 alias lx='cd ~/personal/documents/github/linuxconfig'
 
@@ -143,7 +146,7 @@ alias csal='cd ~/personal/documents/github/CS-AL/'
 
 alias sx='startx'
 
-alias weather='curl wttr.in'
+alias weather='curl wttr.in/Voorschoten'
 
 # Opens my timetable for school
 # alias tt='zathura ~/personal/documents/school/gcse/timetable.pdf'
@@ -154,6 +157,8 @@ alias weather='curl wttr.in'
 alias mcserver='~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
 
 alias sshsp='ssh -p 13372 dante@192.168.178.178'
+
+alias rdwmb='killall -q dwmblocks;setsid dwmblocks &'
 
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/scripts/statusbar/:$PATH

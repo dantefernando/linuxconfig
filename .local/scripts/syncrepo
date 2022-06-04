@@ -1,45 +1,72 @@
 #!/bin/sh
 
-# Synchronize all current scripts and config files to my linuxconfig/ repo location.
+# About: Synchronize all current scripts and config files to my linuxconfig/ repo location.
 
-# Set cloned linuxconfig github directory location here
+# !! NOTE: This is a really crappy, inefficient way of
+# backing up all the config files from my linux system
+# to a github repo. This is just a quick and dirty method,
+# I haven't had the time to improve it just yet. 
+
+############################################################################
+
+
+# Set cloned linuxconfig github dir location here / backup repo dir
 repoLocation=~/personal/documents/github/linuxconfig
 
-# Array of files/folders to copy over 
+# Array of files/folders to copy over  (in $HOME ONLY)
 # Edit directories/files to be synced to the repoLocation
 files=(
+
+		~/.config/htop/
+		~/.config/mimeapps.list
+		~/.config/nvim/init.vim
+		~/.config/nvim/autoload/plug.vim
+		~/.config/nvim/vim-plug/plugins.vim
+		~/.config/nvim/spell/
+		~/.config/ranger/rc.conf
+		~/.config/pcmanfm/default/pcmanfm.conf
+		~/.config/Xresources/
+		~/.config/picom.conf
+		~/.config/touchcursor/touchcursor.conf
+		~/.config/zathura/
+
+		~/.local/scripts/
+		~/.local/share/larbs/emoji
+		~/.local/share/applications/sxiv.desktop
+
+		~/personal/pictures/wallpapers
+
 		~/.Xauthority
 		~/.bash_profile
 		~/.bashrc
 		~/.vimrc
 		~/.xinitrc
 
-		~/.config/mimeapps.list
-		~/.config/nvim/init.vim
-		~/.config/nvim/autoload/plug.vim
-		~/.config/nvim/vim-plug/plugins.vim
-
-		~/.config/ranger/rc.conf
-
-		~/.config/pcmanfm/default/pcmanfm.conf
-
-		~/.config/Xresources/
-
-		~/.config/picom.conf
-
-		~/.config/touchcursor/touchcursor.conf
-
-		~/.local/scripts/
-
-		~/personal/pictures/wallpapers
 	)
+
+# Files that aren't in $HOME to be copied over:
+# e.g. /etc/ files
+nonhomefiles=(
+
+	/etc/default/grub
+	/etc/doas.conf
+	/etc/fstab
+
+	)
+
 
 
 copyFiles() {
 	# Iterate over each file and copy it to temporary dir
-	# as well as any parent directories
+	# as well as any parent directories.
 	for file in ${files[@]}; do
 		cp -rv --parents $file $tempDir
+	done
+
+	# Iterate all non-home files and copy them to the temp
+	# dir as well as nay parent directories.
+	for file in ${nonhomefiles[@]}; do
+		cp -rv --parents $file $tempDir/home/$USER/
 	done
 
 	# Copies normal files and hidden files

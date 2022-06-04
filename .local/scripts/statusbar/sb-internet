@@ -13,7 +13,7 @@
 # COMMENT OUT UNDESIRABLE SETTINGS BELOW!!
 
 # if uncommented: showVPNIP will show IP if VPN is active 
-showVPNIP=1
+# showVPNIP=1
 
 # if uncommented: showMyIPAddress will show IP if VPN is NOT active 
 # showMyIPAddress=1
@@ -22,7 +22,7 @@ showVPNIP=1
 # showSSID=1
 
 # !! SET THIS to the port used by qBittorrent !!
-PORT=55708
+# PORT=55708
 
 
 ################## END ##########################
@@ -76,6 +76,7 @@ getNetInfo() {
 	# If VPN is active, set vpn var to lock emoji
 	vpn=$(sed "s/.*/🔒/" /sys/class/net/tun*/operstate 2>/dev/null)
 
+	[[ $(nmcli d | awk '/ethernet/ {print $4}') == 'Shared' ]] && sharedStatus=" 🔗"
 }
 
 
@@ -89,7 +90,7 @@ main () {
 	[[ -n $showMyIPAddress || -n $showVPNIP ]] && getIP
 
 
-	printf "%s %s%s%s%s %s\n" "$network" "$wifiicon" "$(sed "s/down/🔴/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" "$vpn" "$portStatus" "$address"
+	printf "%s %s%s%s%s%s %s\n" "$network" "$wifiicon" "$(sed "s/down/🔴/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" "$sharedStatus" "$vpn" "$portStatus" "$address"
 }
 
 main
