@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Display status of barrier application running
+
+# Instance of barriers/barrierc is running
+[[ -n $(pgrep barriers) ]] && echo "Server 💻🔗"
+[[ -n $(pgrep barrierc) ]] && echo "Client 💻🔗"
