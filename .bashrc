@@ -160,6 +160,12 @@ alias sshsp='ssh -p 13372 dante@192.168.178.178'
 
 alias rdwmb='killall -q dwmblocks;setsid dwmblocks &'
 
+# Start barrier for server
+alias sbs='barriers --config ~/.config/barrier/server.conf --disable-crypto'
+# Start barrier for client
+alias sbc='barrierc --config ~/.config/barrier/client.conf --disable-crypto'
+
+
 # Adds statusbar scripts to $PATH 
 export PATH=~/.local/scripts/statusbar/:$PATH
 export PATH=~/.local/scripts/screencapture/:$PATH
@@ -180,3 +186,6 @@ PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;211m\]\u\[$(tput sgr0)\]@\[$(t
 
 # Red on Red
 # PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;124m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\\[\033[38;5;9m\]\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+
+
+

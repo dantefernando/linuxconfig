@@ -26,6 +26,7 @@ files=(
 		~/.config/ranger/rc.conf
 		~/.config/pcmanfm/default/pcmanfm.conf
 		~/.config/Xresources/
+		~/.config/barrier/
 		~/.config/picom.conf
 		~/.config/touchcursor/touchcursor.conf
 		~/.config/zathura/
