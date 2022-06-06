@@ -163,7 +163,7 @@ alias rdwmb='killall -q dwmblocks;setsid dwmblocks &'
 # Start barrier for server
 alias sbs='barriers --config ~/.config/barrier/server.conf --disable-crypto'
 # Start barrier for client
-alias sbc='barrierc --config ~/.config/barrier/client.conf --disable-crypto'
+alias sbc='barrierc --name archsp --disable-crypto 192.168.178.130'
 
 
 # Adds statusbar scripts to $PATH 
