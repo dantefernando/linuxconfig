@@ -1,20 +1,20 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'ap/vim-css-color'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-syntastic/syntastic'
+" Plug 'tpope/vim-surround'
+" Plug 'Raimondi/delimitMate'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-syntastic/syntastic'
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-commentary'
 Plug 'ervandew/supertab'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'thinca/vim-fontzoom'
+" Plug 'thinca/vim-fontzoom'
 call plug#end()
 
 set relativenumber
