@@ -43,6 +43,9 @@ alias l='ls -CF'
 alias r='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
 alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $HOME/.config/ranger/.rangerdir`; cd "$LASTDIR"'
 
+alias md='mullvad disconnect && mullvad status'
+alias mc='mullvad connect && mullvad status'
+alias ms='mullvad status'
 
 # suckless -----------
 
@@ -172,11 +175,17 @@ alias dsam='udisksctl unmount -b /dev/sda1 && udisksctl power-off -b /dev/sda'
 export PATH=~/.local/scripts/statusbar/:$PATH
 export PATH=~/.local/scripts/screencapture/:$PATH
 
+# Start barrier for server
+alias sbs='barriers --config ~/.config/barrier/server.conf --disable-crypto'
+# Start barrier for client
+alias sbc='barrierc --name archsp --disable-crypto 192.168.178.130'
+
 # Personal scripts
 export PATH=~/.local/scripts/:$PATH
 
 export PATH=~/.local/bin/:$PATH
 
+alias idis='export DISPLAY=:0'
 
 # PS1 Bash Prompt. Looks like: [dante@archbox ~]$
 

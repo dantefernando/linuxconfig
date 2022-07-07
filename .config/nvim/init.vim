@@ -28,7 +28,14 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 
 " LaTeX commands
 
+" Open LaTeX pdf file
 map <leader>o :! zathura $(echo % \| sed 's/tex$/pdf/') & disown <CR><CR>
+
+" Open Markdown pdf file
+map <leader>O :! zathura $(echo % \| sed 's/md$/pdf/') & disown <CR><CR>
+
+" Recompile references using biber
+map <leader>r :! biber $(echo % \| sed 's/.tex//') && pdflatex % <CR><CR>
 
 " ==========================================================
 
@@ -71,17 +78,25 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 
 
-" Start on vim Startup
+" Disable indent lines on vim Startup
 let g:indent_guides_enable_on_vim_startup = 0
 
 " The size of the indent line
 let g:indent_guides_guide_size = 4
 
-" When it starts
+" When the indent line starts
 let g:indent_guides_start_level = 1
+
+" Disable auto colors for indent lines
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
+
+
 
 " Set Vim Airline Theme
 let g:airline_theme='fruit_punch'
+
 
 " Changes Nerd Tree arrows (Nerd Font)
 let g:NERDTreeDirArrowExpandable = ''

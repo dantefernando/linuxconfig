@@ -23,6 +23,14 @@ NC='\033[0m' # No Color
 BOLD=$(tput bold)
 NORM=$(tput sgr0)
 
+copyqBtStats() {
+		echo "Copying qBt config folder to drive for backup..."
+		[[ -d $HOME/.config/qBittorrent ]] && cp -rv $HOME/.config/qBittorrent/ /run/media/dante/T7/SP/qBt_backup/ && echo "Backed up!"
+}
+
+getLocalIP() {
+    ip a | awk '/192.168/ {print $2}'
+}
 
 
 echo && if [[ $(mullvad status | awk '{print $3}') == "Connected" ]]; then
@@ -35,10 +43,12 @@ echo && if [[ $(mullvad status | awk '{print $3}') == "Connected" ]]; then
 				if [[ $(lsblk --fs | awk '/2E12-F68D/ {print $8}') == "/run/media/dante/T7" ]]; then
 						echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
 						echo -e "${Cyan}=> ${White}Already mounted.${NC}"
+						copyqBtStats
 						echo -e "${Cyan}=> ${White}Starting ${Yellow}tmux session${White}...${NC}"
 						tmux new -s qbt -d 'qbittorrent-nox' \;
 						echo -e "${Cyan}=> ${Yellow}tmux session ${White}started.${NC}"
 						echo -e "${White}$(tmux ls)${NC}"
+						echo $(getLocalIP)
 
 				# Not plugged in
 				elif [[ -z $(lsblk --fs | grep 2E12-F68D ) ]]; then
@@ -49,10 +59,12 @@ echo && if [[ $(mullvad status | awk '{print $3}') == "Connected" ]]; then
 						echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
 						echo -e "${Cyan}=> ${White}Drive ${Orange}not mounted${White}, ${Green}mounting${White}...${NC}"
 						udisksctl mount -b /dev/sda1 && echo -e "${Cyan}=> ${LightGreen}Mounted${White}.${NC}" 
+						copyqBtStats
 						echo -e "${Cyan}=> ${White}Starting ${Yellow}tmux session${White}...${NC}"
 						tmux new -s qbt -d 'qbittorrent-nox' \;
 						echo -e "${Cyan}=> ${Yellow}tmux session ${White}started.${NC}"
 						echo -e "${White}$(tmux ls)${NC}"
+						echo $(getLocalIP)
 				fi
 		else  # qbittorrent-nox is already running
 			echo -e "${Cyan}=> ${BOLD}${White}qbittorrent-nox is ${Green}already running${White}.${NC}${NORM}"
@@ -66,4 +78,3 @@ else
 fi
 
 echo ""
-
