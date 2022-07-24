@@ -9,7 +9,7 @@ GRUB_DISABLE_OS_PROBER=false
 #GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"
 
 # Uncomment if you want GRUB with logs
-GRUB_CMDLINE_LINUX_DEFAULT=""
+GRUB_CMDLINE_LINUX_DEFAULT="ibt=off"
 
 GRUB_CMDLINE_LINUX=""
 

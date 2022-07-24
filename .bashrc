@@ -47,8 +47,8 @@ alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $
 # suckless -----------
 
 # alias sck='cd ~/programs/suckless'
-# alias sckdwm='cd ~/programs/suckless/dwmNoTitle'
-# alias sckdwmc='cd ~/programs/suckless/dwmNoTitle && con'
+# alias sckdwm='cd ~/programs/suckless/dwm'
+# alias sckdwmc='cd ~/programs/suckless/dwm && con'
 
 # alias sckst='cd ~/programs/suckless/st'
 # alias sckstc='cd ~/programs/suckless/st && con'
@@ -61,8 +61,8 @@ alias ranger='ranger --choosedir=$HOME/.config/ranger/.rangerdir; LASTDIR=`cat $
 
 
 alias fs='cd ~/programs/suckless'
-alias fdwm='cd ~/programs/suckless/dwmNoTitle'
-alias cdwm='cd ~/programs/suckless/dwmNoTitle && con'
+alias fdwm='cd ~/programs/suckless/dwm'
+alias cdwm='cd ~/programs/suckless/dwm && con'
 
 alias fst='cd ~/programs/suckless/st'
 alias cst='cd ~/programs/suckless/st && con'
@@ -175,6 +175,12 @@ export PATH=~/.local/scripts/:$PATH
 
 export PATH=~/.local/bin/:$PATH
 
+alias ms='mullvad status'
+alias mc='mullvad connect && echo "connecting.."'
+alias md='mullvad disconnect && echo "disconnecting"'
+
+alias sam='udisksctl mount -b /dev/sdb1'
+alias dsam='udisksctl unmount -b /dev/sdb1 && udisksctl power-off -b /dev/sdb'
 
 # PS1 Bash Prompt. Looks like: [dante@archbox ~]$
 

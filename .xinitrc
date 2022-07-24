@@ -27,6 +27,8 @@
 # Compositor for blurring and transparency for st
 (picom --experimental-backends) &
 
+# 
+(~/.config/xrandr/scripts/hdmileft.sh) &
 
 # Exec dwm
 (exec dwm)

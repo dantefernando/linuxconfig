@@ -1,6 +1,7 @@
 aircrack-ng 1.6-6
 alsa-firmware 1.2.4-2
 alsa-utils 1.2.6-1
+arandr 0.1.10-7
 audacity 1:2.4.1-7
 autoconf 2.71-1
 automake 1.16.5-1
@@ -44,11 +45,13 @@ handbrake 1.5.1-1
 hplip 1:3.22.4-1
 htop 3.1.2-1
 hunspell-en_us 2020.12.07-4
+ifuse 1.1.4-2
 imlib2 1.7.5-1
 jre-openjdk 17.0.1.u12-1
 lf 26-1
 libappindicator-gtk3 12.10.0.r296-1
 libexif 0.6.24-1
+libimobiledevice 1.3.0-5
 libreoffice-still 7.2.5-3
 libtool 2.4.6+42+gb88cebd5-16
 libxft-bgra 2.3.4-1
@@ -61,6 +64,7 @@ m4 1.4.19-1
 make 4.3-3
 man-db 2.10.0-1
 mpv 1:0.34.1-4
+mullvad-vpn-bin 2022.2-1
 neofetch 7.1.0-2
 neovim 0.6.1-1
 nerd-fonts-jetbrains-mono 2.1.0-3
@@ -68,6 +72,8 @@ networkmanager 1.34.0-1
 nm-connection-editor 1.26.0-1
 npm 8.4.1-1
 ntfs-3g 2021.8.22-1
+nvidia-dkms 515.57-1
+nvidia-settings 515.57-1
 obs-studio 27.1.3-3
 opendoas 6.8.2-1
 os-prober 1.79-1
@@ -136,6 +142,7 @@ xorg-server 21.1.3-1
 xorg-xbacklight 1.2.3-2
 xorg-xev 1.2.4-1
 xorg-xinit 1.4.1-3
+xorg-xrandr 1.5.1-2
 xsel 1.2.0.20200527-1
 yarn 1.22.17-1
 yay 11.1.1-1

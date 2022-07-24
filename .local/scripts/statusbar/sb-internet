@@ -22,7 +22,7 @@
 # showSSID=1
 
 # !! SET THIS to the port used by qBittorrent !!
-# PORT=55708
+PORT=55927
 
 
 ################## END ##########################
