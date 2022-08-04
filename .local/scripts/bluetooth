@@ -43,7 +43,7 @@ main() {
 		deviceChoice=$(echo "$2" | awk '{print tolower($0)}')
 
 		[[ $deviceChoice == "air" || $deviceChoice == "airpods" || $deviceChoice == "a" ]] && DEVICE=$AIRPODS
-		[[ $deviceChoice == "speaker" || $deviceChoice == "speaker" || $deviceChoice == "speak" ]] && DEVICE=$AIRPODS
+		[[ $deviceChoice == "speaker" || $deviceChoice == "speaker" || $deviceChoice == "speak" ]] && DEVICE=$SPEAKER
 	fi
 
 	# Change user input to lowercase and call speaker function
