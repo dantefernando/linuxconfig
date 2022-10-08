@@ -11,6 +11,7 @@ let mapleader =" "
 " Compile document, be it markdown or py using compiler script
 " ~/.local/bin/compiler
 map <leader>c :w! \| !compiler "<c-r>%"<CR><esc>
+map <leader>C :w! \| !xelatex % <CR><CR>
 
 nnoremap <F8> :noh <esc>
 nnoremap <F7> :IndentGuidesToggle <esc>
@@ -36,6 +37,7 @@ map <leader>O :! zathura $(echo % \| sed 's/md$/pdf/') & disown <CR><CR>
 
 " Recompile references using biber
 map <leader>r :! biber $(echo % \| sed 's/.tex//') && pdflatex % <CR><CR>
+
 
 " ==========================================================
 
