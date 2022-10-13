@@ -25,9 +25,9 @@
 (unclutter --timeout 10) &
 
 # Compositor for blurring and transparency for st
-(picom --experimental-backends) &
+# (picom --experimental-backends) &
 
-(.config/xrandr/scripts/hdmileft.sh) &
+# (.config/xrandr/scripts/hdmileft.sh) &
 # (.config/xrandr/scripts/monitor.sh) &
 
 # Exec dwm
