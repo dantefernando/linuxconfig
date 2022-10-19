@@ -8,6 +8,10 @@ getSpotify () {
 
 		# Get the process ID of brave and return the chromium player instance
 		local braveid=$(pgrep brave | head -n 1) && local player="chromium.instance$braveid" && echo $player
+	elif [[ -n $(pgrep tidal-hifi) ]] ; then  # tidal-hifi is running tidal
+
+		# Get the process ID of tidal-hifi and return the chromium player instance
+		local braveid=$(pgrep tidal-hifi | head -n 1) && local player="chromium.instance$braveid" && echo $player
 	elif [[ -n $(pgrep spotify) ]] ; then  # Spotify is running
 
 		# return spotify as the current music player

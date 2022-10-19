@@ -26,13 +26,17 @@ getSpotify () {
 
 	if [[ -n $(pgrep brave) ]] ; then  # Brave is running spotify
 		# player=$(playerctl -l | grep chromium)
-		braveid=$(pgrep brave | head -n 1)
-		player="chromium.instance$braveid"
+		id=$(pgrep brave | head -n 1)
+		player="chromium.instance$id"
 		echo $(getTrack)
-	elif [[ -n $(pgrep spotify) ]] ; then  # Spotify is running
-		player="spotify"
+	elif [[ -n $(pgrep tidal-hifi) ]] ; then  # tidal-hifi is running
+		id=$(pgrep tidal-hifi | head -n 1)
+		player="chromium.instance$id"
 		echo $(getTrack)
 	fi
+	# elif [[ -n $(pgrep spotify) ]] ; then  # spotify is running
+	# 	player="spotify"
+	# 	echo $(getTrack)
 
 }
 
