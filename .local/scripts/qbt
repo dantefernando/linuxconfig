@@ -25,7 +25,7 @@ NORM=$(tput sgr0)
 
 copyqBtStats() {
 		echo "Copying qBt config folder to drive for backup..."
-		[[ -d $HOME/.config/qBittorrent ]] && cp -rv $HOME/.config/qBittorrent/ /run/media/dante/T7/SP/qBt_backup/ && echo "Backed up!"
+		[[ -d $HOME/.config/qBittorrent ]] && cp -rv $HOME/.config/qBittorrent/ /run/media/dante/SGHDD/stuff/qBt_backup/ && echo "Backed up!"
 }
 
 getLocalIP() {
@@ -41,7 +41,7 @@ echo && if [[ $(mullvad status | awk '{print $1}') == "Connected" ]]; then
 
 
 				# Drive is mounted correctly
-				if [[ $(lsblk --fs | awk '/2E12-F68D/ {print $8}') == "/run/media/dante/T7" ]]; then
+				if [[ $(lsblk --fs | awk '/F00D-9045/ {print $8}') == "/run/media/dante/SGHDD" ]]; then
 						echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
 						echo -e "${Cyan}=> ${White}Already mounted.${NC}"
 						copyqBtStats
@@ -52,11 +52,11 @@ echo && if [[ $(mullvad status | awk '{print $1}') == "Connected" ]]; then
 						echo $(getLocalIP)
 
 				# Not plugged in
-				elif [[ -z $(lsblk --fs | grep 2E12-F68D ) ]]; then
+				elif [[ -z $(lsblk --fs | grep F00D-9045 ) ]]; then
 						echo -e "${Cyan}=> ${White}External drive ${Red}not plugged in.${White} Try again...${NC}"
 
 				# Plugged in but not mounted anywhere
-				elif [[ -z $(lsblk --fs | awk '/2E12-F68D/ {print $8}') ]]; then
+				elif [[ -z $(lsblk --fs | awk '/F00D-9045/ {print $8}') ]]; then
 						echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
 						echo -e "${Cyan}=> ${White}Drive ${Orange}not mounted${White}, ${Green}mounting${White}...${NC}"
 						udisksctl mount -b /dev/sdb1 && echo -e "${Cyan}=> ${LightGreen}Mounted${White}.${NC}" 
