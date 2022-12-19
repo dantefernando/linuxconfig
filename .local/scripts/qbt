@@ -23,9 +23,15 @@ NC='\033[0m' # No Color
 BOLD=$(tput bold)
 NORM=$(tput sgr0)
 
+# CHANGE THESE:
+DRIVEUUID='F00D-9045' # Seagate
+
+
 copyqBtStats() {
 		echo "Copying qBt config folder to drive for backup..."
-		[[ -d $HOME/.config/qBittorrent ]] && cp -rv $HOME/.config/qBittorrent/ /run/media/dante/SGHDD/stuff/qBt_backup/ && echo "Backed up!"
+		[[ -d $HOME/.config/qBittorrent ]] && cp -rv $HOME/.config/qBittorrent/ /run/media/dante/SGHDD/stuff/qBt_backupCONFIG/ && echo "Backed up!"
+		echo "Copying qBt local share config folder to drive for backup..."
+		[[ -d $HOME/.local/share/qBittorrent ]] && cp -rv $HOME/.local/share/qBittorrent/ /run/media/dante/SGHDD/stuff/qBt_backupLOCALSHARE/ && echo "Backed up!"
 }
 
 getLocalIP() {
@@ -41,7 +47,7 @@ echo && if [[ $(mullvad status | awk '{print $1}') == "Connected" ]]; then
 
 
 				# Drive is mounted correctly
-				if [[ $(lsblk --fs | awk '/F00D-9045/ {print $8}') == "/run/media/dante/SGHDD" ]]; then
+				if [[ $(lsblk --fs | awk '/$DRIVEUUID/ {print $8}') == "/run/media/dante/SGHDD" ]]; then
 						echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
 						echo -e "${Cyan}=> ${White}Already mounted.${NC}"
 						copyqBtStats
@@ -52,7 +58,7 @@ echo && if [[ $(mullvad status | awk '{print $1}') == "Connected" ]]; then
 						echo $(getLocalIP)
 
 				# Not plugged in
-				elif [[ -z $(lsblk --fs | grep F00D-9045 ) ]]; then
+				elif [[ -z $(lsblk --fs | grep $DRIVEUUID ) ]]; then
 						echo -e "${Cyan}=> ${White}External drive ${Red}not plugged in.${White} Try again...${NC}"
 
 				# Plugged in but not mounted anywhere
