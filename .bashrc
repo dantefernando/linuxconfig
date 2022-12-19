@@ -89,7 +89,7 @@ alias fonts='cd /usr/share/fonts && ls -lsah'
 alias fp='cd ~/personal/pictures'
 alias fv='cd ~/personal/videos/'
 
-alias gh='cd ~/personal/documents/github'
+# alias gh='cd ~/personal/documents/github'
 alias hdd='cd /mnt/hdd'
 alias fonts='cd /usr/share/fonts && ls -lsah'
 alias pics='cd ~/personal/pictures'
@@ -156,7 +156,7 @@ alias weather='curl wttr.in/Voorschoten'
 # alias mcserver='cd ~/downloads/Minecraft/ && ~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
 alias mcserver='~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
 
-alias sshsp='ssh -p 13372 dante@192.168.178.178'
+alias sshsp='ssh -p 13371 dante@192.168.2.40'
 
 alias rdwmb='killall -q dwmblocks;setsid dwmblocks &'
 
@@ -188,10 +188,10 @@ alias dsam='udisksctl unmount -b /dev/sdb1 && udisksctl power-off -b /dev/sdb'
 # PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;1m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;56m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\[\033[38;5;9m\]\$\[$(tput sgr0)\] "
 
 # Pink on Pink
-PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;211m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;205m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;204m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\[\033[38;5;9m\]\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+# PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;211m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;205m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;204m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\[\033[38;5;9m\]\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 # Red on Red
-# PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;124m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\\[\033[38;5;9m\]\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+PS1="[\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;124m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\\[\033[38;5;11m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\[$(tput bold)\]\\[\033[38;5;9m\]\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 
 
