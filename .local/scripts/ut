@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# make backup of original files in case
+echo "making backup of original torrents to $HOME/.local/share/qBittorrent_bak/"
+
+mv -v $HOME/.local/share/qBittorrent/ $HOME/.local/share/qBittorrent_bak/
+
+# remove original to be replaced
+echo "removing $HOME/.local/share/qBitorrent/"
+rm -rfv $HOME/.local/share/qBittorrent/
+
+# copy new torrents
+echo "copying new torrents"
+cp -rv /run/media/dante/SGHDD/stuff/qBt_backupLOCALSHARE/ $HOME/.local/share/qBittorrent
+echo "copied!"
+
