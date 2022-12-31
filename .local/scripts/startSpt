@@ -1,0 +1,7 @@
+#!/bin/sh
+
+
+# if spotifyd isn't running, start it
+
+[[ -z $(pgrep spotifyd) ]] && spotifyd
+spt && pkill spotifyd
