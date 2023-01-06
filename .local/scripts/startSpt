@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#pacman -S spotifyd
+#yay -S spotify-tui
 
 # if spotifyd isn't running, start it
 
