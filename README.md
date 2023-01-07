@@ -2,8 +2,8 @@
 Dot files for my **Arch Linux System**, Neovim/Vim and Bash as well as other applications
 
 ## About:
-- Files located in the `.local/bin/` directory are shell scripts that can be placed anywhere in `$PATH`
-- Scripts in the `.local/bin/statusbar/` directory are shell scripts that are used in my dwmblocks statusbar
+- Files located in the `.local/scripts/` directory are shell scripts that can be placed anywhere in `$PATH`
+- Scripts in the `.local/scripts/statusbar/` directory are shell scripts that are used in my dwmblocks statusbar
 
 --------------------------
 
@@ -24,6 +24,14 @@ Dot files for my **Arch Linux System**, Neovim/Vim and Bash as well as other app
 		- `F9` can run python program inside Vim interface **(Windows Only)**
 - `F8` clears highlighting for searches using `:noh` command in Vim
 - `F7` Toggles Indent Guide Lines
+
+### LaTeX Neovim Keybinds
+
+- `<leader>c` compiles a regular .tex file
+- `<leader>C` compiles a .tex file using **xelatex**
+- `<leader>c` compiles a regular .tex file and adds references using **biber**
+- `<leader>o` views the compiled pdf of the currently opened **.tex** document in zathura (assuming it's in the same working directory)
+- `<leader>O` views the compiled pdf of the currently opened **.md** document in zathura (assuming it's in the same working directory)
 
 ## GTK3 Cherry Theme
 - Download gtk theme manager: `lxappearance`
@@ -47,5 +55,5 @@ Dot files for my **Arch Linux System**, Neovim/Vim and Bash as well as other app
 
 ## Wallpapers
 - Wallpapers that I use are in the `./personal/pictures/wallpapers/` directory.
-- **I DO NOT OWN OR TAKE CREDIT ANY OF THESE WALLPAPERS!**
+- **I DO NOT OWN OR TAKE CREDIT FOR ANY OF THESE WALLPAPERS!**
 - I just store them here for my personal use.
