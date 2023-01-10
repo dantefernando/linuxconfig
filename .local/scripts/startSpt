@@ -4,6 +4,8 @@
 #yay -S spotify-tui
 
 # if spotifyd isn't running, start it
-
 [[ -z $(pgrep spotifyd) ]] && spotifyd
-spt && pkill spotifyd
+
+# Start spotify-tui
+spt
+# spt && pkill spotifyd
