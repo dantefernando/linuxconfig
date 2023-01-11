@@ -33,9 +33,13 @@ getSpotify () {
 		id=$(pgrep tidal-hifi | head -n 1)
 		player="chromium.instance$id"
 		echo $(getTrack)
-	elif [[ -n $(pgrep spotifyd) ]] ; then  # tidal-hifi is running
+	elif [[ -n $(pgrep spotifyd) ]] ; then  # spotifyd is running
 		id=$(pgrep spotifyd | head -n 1)
 		player="spotifyd.instance$id"
+		echo $(getTrack)
+	elif [[ -n $(pgrep spotify) ]] ; then  # spotify proprietary client is running
+		id=$(pgrep spotify | head -n 1)
+		player="spotify"
 		echo $(getTrack)
 	fi
 	# elif [[ -n $(pgrep spotify) ]] ; then  # spotify is running
