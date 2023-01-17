@@ -1,14 +1,47 @@
 #!/bin/sh
 
-# transfer qbt config data from hdd to laptop
+##################################################
+# Transfer qbt config data from hdd to laptop    #
+##################################################
 
-# remove existing dirs and replace them with existing backed up dirs from hdd
-rm -rf $HOME/.config/qBittorrent/ && cp -r /run/media/dante/SGHDD/stuff/qBt_backupCONFIG/qBittorrent/ $HOME/.config/qBittorrent
-rm -rf $HOME/.local/share/qBittorrent/ && cp -r /run/media/dante/SGHDD/stuff/qBt_backupLOCALSHARE/qBittorrent/ $HOME/.local/share/qBittorrent/
+# MOUNT DRIVE:
+#
+# Drive is mounted correctly
 
-echo "info transferred, done!"
 
-echo "patching configs for ports..."
+# Copy configs from HDD to local drive to sync with previously used computer
+copyConfigs() {
 
-[[ $HOSTNAME == "t420" ]] && patch $HOME/.config/qBittorrent/qBittorrent.conf < /run/media/dante/SGHDD/stuff/diffs/t420.diff
-[[ $HOSTNAME == "archbox" ]] && patch $HOME/.config/qBittorrent/qBittorrent.conf < /run/media/dante/SGHDD/stuff/diffs/archbox.diff
+		# remove existing dirs and replace them with existing backed up dirs from hdd
+		rm -rf $HOME/.config/qBittorrent/ && cp -r /run/media/dante/SGHDD/stuff/qBt_backupCONFIG/qBittorrent/ $HOME/.config/qBittorrent
+		rm -rf $HOME/.local/share/qBittorrent/ && cp -r /run/media/dante/SGHDD/stuff/qBt_backupLOCALSHARE/qBittorrent/ $HOME/.local/share/qBittorrent/
+
+		echo "info transferred, done!"
+		echo "patching configs for ports..."
+
+		[[ $HOSTNAME == "t420" ]] && patch $HOME/.config/qBittorrent/qBittorrent.conf < /run/media/dante/SGHDD/stuff/diffs/t420.diff
+		[[ $HOSTNAME == "archbox" ]] && patch $HOME/.config/qBittorrent/qBittorrent.conf < /run/media/dante/SGHDD/stuff/diffs/archbox.diff
+
+		echo "patched!"
+
+}
+
+if [[ $(lsblk --fs | awk '/F00D-9045/ {print $8}') == "/run/media/dante/SGHDD" ]]; then
+		echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
+		echo -e "${Cyan}=> ${White}Already mounted.${NC}"
+		copyConfigs
+
+# Not plugged in
+#
+elif [[ -z $(lsblk --fs | grep F00D-9045 ) ]]; then
+		echo -e "${Cyan}=> ${White}External drive ${Red}not plugged in.${White} Try again...${NC}"
+
+# Plugged in but not mounted anywhere
+#
+elif [[ -z $(lsblk --fs | awk '/F00D-9045/ {print $8}') ]]; then
+		echo -e "${Cyan}=> ${White}External drive ${Green}found.${NC}"
+		echo -e "${Cyan}=> ${White}Drive ${Orange}not mounted${White}, ${Green}mounting${White}...${NC}"
+		udisksctl mount -b /dev/sdb1 && echo -e "${Cyan}=> ${LightGreen}Mounted${White}.${NC}" 
+		copyConfigs
+fi
+
