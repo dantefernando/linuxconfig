@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# transfer qbt config data from hdd to laptop
+
+# remove existing dirs and replace them with existing backed up dirs from hdd
+rm -rf $HOME/.config/qBittorrent/ && cp -r /run/media/dante/SGHDD/stuff/qBt_backupCONFIG/ $HOME/.config/qBittorrent
+rm -rf $HOME/.local/share/qBittorrent/ && cp -r /run/media/dante/SGHDD/stuff/qBt_backupLOCALSHARE/ $HOME/.local/share/qBittorrent/
+
+echo "info transferred, done!"
