@@ -7,3 +7,8 @@ rm -rf $HOME/.config/qBittorrent/ && cp -r /run/media/dante/SGHDD/stuff/qBt_back
 rm -rf $HOME/.local/share/qBittorrent/ && cp -r /run/media/dante/SGHDD/stuff/qBt_backupLOCALSHARE/qBittorrent/ $HOME/.local/share/qBittorrent/
 
 echo "info transferred, done!"
+
+echo "patching configs for ports..."
+
+[[ $HOSTNAME == "t420" ]] && patch $HOME/.config/qBittorrent/qBittorrent.conf < /run/media/dante/SGHDD/stuff/diffs/t420.diff
+[[ $HOSTNAME == "archbox" ]] && patch $HOME/.config/qBittorrent/qBittorrent.conf < /run/media/dante/SGHDD/stuff/diffs/archbox.diff
