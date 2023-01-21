@@ -26,6 +26,36 @@ NORM=$(tput sgr0)
 # CHANGE THESE:
 DRIVEUUID='F00D-9045' # Seagate
 
+# automatically mount the slave drive
+mountSlaveDrive() {
+
+	# Drive is mounted correctly
+	if [[ $(lsblk --fs | awk '/E553-7C9A/ {print $8}') == "/run/media/dante/insignia" ]]; then
+			echo -e "${Cyan}=> ${White}Slave drive ${Green}found.${NC}"
+			echo -e "${Cyan}=> ${White}Already mounted.${NC}"
+
+	# Not plugged in
+	elif [[ -z $(lsblk --fs | grep E553-7C9A ) ]]; then
+			echo -e "${Red}#########################################################${NC}"
+			echo -e "${Red}#########################################################${NC}"
+			echo -e "${Red}#########################################################${NC}"
+			echo -e "${Red}#########################################################${NC}"
+			echo -e "${Cyan}=> ${White}Slave drive ${Red}not plugged in.${White}${NC}"
+			echo -e "${Red}#########################################################${NC}"
+			echo -e "${Red}#########################################################${NC}"
+			echo -e "${Red}#########################################################${NC}"
+			echo -e "${Red}#########################################################${NC}"
+
+	# Plugged in but not mounted anywhere
+	elif [[ -z $(lsblk --fs | awk '/E553-7C9A/ {print $8}') ]]; then
+			echo -e "${Cyan}=> ${White}Slave drive ${Green}found.${NC}"
+			echo -e "${Cyan}=> ${White}Drive ${Orange}not mounted${White}, ${Green}mounting${White}...${NC}"
+			udisksctl mount -b /dev/sdc1 && echo -e "${Cyan}=> ${LightGreen}Mounted${White}.${NC}" 
+	fi
+
+}
+
+
 copyqBtStats() {
 		echo -e "${Purple}Checking existing directories...${NC}"
 
@@ -61,6 +91,7 @@ echo && if [[ $(mullvad status | awk '{print $1}') == "Connected" ]]; then
 						echo -e "${Cyan}=> ${White}Already mounted.${NC}"
 						copyqBtStats
 						echo -e "${Cyan}=> ${White}Starting ${Yellow}tmux session${White}...${NC}"
+						mountSlaveDrive
 						tmux new -s qbt -d 'qbittorrent-nox; cp -rv $HOME/.config/qBittorrent/ /run/media/dante/SGHDD/stuff/qBt_backupCONFIG/.; cp -rv $HOME/.local/share/qBittorrent/ /run/media/dante/SGHDD/stuff/qBt_backupLOCALSHARE/.' \;
 						echo -e "${Cyan}=> ${Yellow}tmux session ${White}started.${NC}"
 						echo -e "${White}$(tmux ls)${NC}"
@@ -77,6 +108,7 @@ echo && if [[ $(mullvad status | awk '{print $1}') == "Connected" ]]; then
 						udisksctl mount -b /dev/sdb1 && echo -e "${Cyan}=> ${LightGreen}Mounted${White}.${NC}" 
 						copyqBtStats
 						echo -e "${Cyan}=> ${White}Starting ${Yellow}tmux session${White}...${NC}"
+						mountSlaveDrive
 						tmux new -s qbt -d 'qbittorrent-nox; cp -rv $HOME/.config/qBittorrent/ /run/media/dante/SGHDD/stuff/qBt_backupCONFIG/.; cp -rv $HOME/.local/share/qBittorrent/ /run/media/dante/SGHDD/stuff/qBt_backupLOCALSHARE/.' \;
 						echo -e "${Cyan}=> ${Yellow}tmux session ${White}started.${NC}"
 						echo -e "${White}$(tmux ls)${NC}"
