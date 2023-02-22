@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# Start the minecraft server if it isn't already running
+# To change the server that is running, edit: ~/.local/scripts/start
+# Written by Dante
+
+# Color codes
+Black='\033[0;30m'
+Red='\033[0;31m'
+Green='\033[0;32m'
+Blue='\033[0;34m'
+Purple='\033[0;35m'
+Cyan='\033[0;36m'
+LightGray='\033[0;37m'
+DarkGray='\033[1;30m'
+LightRed='\033[1;31m'
+LightGreen='\033[1;32m'
+Yellow='\033[1;33m'
+LightBlue='\033[1;34m'
+LightPurple='\033[1;35m'
+LightCyan='\033[1;36m'
+White='\033[1;37m'
+NC='\033[0m' # No Color
+BOLD=$(tput bold)
+NORM=$(tput sgr0)
+
+
+# if an instance of java is running:
+if [[ -n $(pgrep java) ]]; then
+		echo -e "${Cyan}=> ${White}Minecraft Server ${Red}Already running.${White}${NC}"
+		echo -e "${Cyan}=> ${Yellow}tmux sessions active rn:${White}${NC}"
+		echo -e "${White}$(tmux ls)${NC}"
+
+# If an instance of java isn't running, run the server:
+elif [[ -z $(pgrep java) ]]; then
+		echo -e "${Cyan}=> ${White}Minecraft Server ${Green}not running..${NC}"
+		echo -e "${Cyan}=> ${White}Creating ${Green}tmux session..${NC}"
+		echo -e "${Cyan}=> ${White}Starting ${Green}server..${NC}"
+		tmux new -s mcserver -d '~/.local/scripts/start' \;
+		#
+		echo -e "${Cyan}=> ${Yellow}tmux session ${White}started.${NC}"
+		echo -e "${Cyan}=> ${White}Minecraft Server ${Green}started.${NC}"
+		echo -e "${Cyan}=> ${Yellow}tmux sessions active rn:${White}${NC}"
+		echo -e "${White}$(tmux ls)${NC}"
+		echo -e "${Cyan}=> ${White}'tmux a -t mcserver' ${Green}to view server.${NC}"
+fi
+
+echo ""
