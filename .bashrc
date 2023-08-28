@@ -137,7 +137,9 @@ alias cq='curl -s https://am.i.mullvad.net/port/55708 && echo'
 
 alias win='cd /mnt/windows'
 
-alias t7='cd /run/media/dante/T7'
+alias t7='cd /run/media/dante/T7/'
+alias sghdd='cd /run/media/dante/SGHDD/'
+alias iphone='cd /run/user/1000/gvfs/'
 
 alias sch='cd ~/personal/documents/github/'
 alias z='zathura'
@@ -157,6 +159,7 @@ alias weather='curl wttr.in/Voorschoten'
 alias mcserver='~/downloads/jdk-16.0.1/bin/java -Xmx14G -Xms10G -server -jar minecraft_server.jar nogui'
 
 alias sshsp='ssh -p 13371 dante@192.168.2.40'
+alias sshm='ssh -p 13373 dante@192.168.2.170'
 
 alias rdwmb='killall -q dwmblocks;setsid dwmblocks &'
 
