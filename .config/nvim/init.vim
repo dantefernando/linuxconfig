@@ -2,6 +2,7 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 
 set relativenumber
 set number
+set mouse=
 
 " KEYBINDS =================================================
 
